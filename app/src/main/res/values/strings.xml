@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">研路相随</string>
+    <string name="home">首页</string>
+    <string name="info">院校信息</string>
+    <string name="subject">学科</string>
+    <string name="mine">我的</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.tongji.yanluapp.ui.fragment.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_subject"
+        android:name="com.tongji.yanluapp.ui.fragment.SubjectFragment"
+        android:label="@string/subject"
+        tools:layout="@layout/fragment_subject" />
+
+    <fragment
+        android:id="@+id/navigation_info"
+        android:name="com.tongji.yanluapp.ui.fragment.InfoFragment"
+        android:label="@string/info"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/navigation_mine"
+        android:name="com.tongji.yanluapp.ui.fragment.MeFragment"
+        android:label="@string/mine"
+        tools:layout="@layout/fragment_me" />
+
+</navigation>

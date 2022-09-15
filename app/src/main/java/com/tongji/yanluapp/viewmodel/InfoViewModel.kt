@@ -1,5 +1,6 @@
 package com.tongji.yanluapp.viewmodel
 
+import com.tongji.yanluapp.bean.School
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 
 /**
@@ -9,4 +10,6 @@ import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
  * @email: tongji0x208@gmail.com
  */
 class InfoViewModel : BaseViewModel() {
+    var listData = mutableListOf<School>()
+
 }

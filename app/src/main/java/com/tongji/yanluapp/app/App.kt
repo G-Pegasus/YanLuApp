@@ -3,6 +3,7 @@ package com.tongji.yanluapp.app
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import com.tencent.mmkv.MMKV
 
 class App : Application() {
 
@@ -14,5 +15,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
+        MMKV.initialize(this)
     }
 }

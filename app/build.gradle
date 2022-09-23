@@ -72,6 +72,9 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.4.2'
     kapt 'androidx.room:room-compiler:2.4.2'
 
+    // MMKV 数据存储
+    implementation 'com.tencent:mmkv:1.2.14'
+
     // Glide
     kapt 'com.github.bumptech.glide:compiler:4.13.2'
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.9.0'

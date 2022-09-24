@@ -1,9 +1,14 @@
 package com.tongji.yanluapp.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import com.tencent.mmkv.MMKV
+import com.tongji.yanluapp.app.data.SchoolData
 import com.tongji.yanluapp.databinding.FragmentMeBinding
+import com.tongji.yanluapp.ui.activity.LikeActivity
+import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
+import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel
 import me.hgj.jetpackmvvm.demo.app.base.BaseFragment1
@@ -34,6 +39,24 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
         mViewBind.tvRefresh.setOnClickListener {
             mViewBind.tvUserName.text = mmkv.decodeString("userName")
             mViewBind.tvUserDes.text = mmkv.decodeString("userDes")
+        }
+
+        mViewBind.rootMoney.setOnClickListener {
+            RewardAuthor().show(childFragmentManager, "RewardAuthor")
+        }
+
+        mViewBind.rootUserLike.setOnClickListener {
+            val intent = Intent(requireContext(), LikeActivity::class.java)
+            startActivity(intent)
+        }
+
+        mViewBind.btnStar.setOnClickListener {
+            val intent = Intent(context, SchoolInfoActivity::class.java)
+            val bundle = Bundle()
+            val web = "https://github.com/G-Pegasus/YanLuApp"
+            bundle.putString("data", web)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
 
     }

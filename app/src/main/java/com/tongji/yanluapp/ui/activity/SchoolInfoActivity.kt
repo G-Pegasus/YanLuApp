@@ -18,6 +18,7 @@ class SchoolInfoActivity : AppCompatActivity() {
 
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
+        webView.settings.useWideViewPort = true;
         webView.loadUrl(schoolWeb)
     }
 }

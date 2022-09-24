@@ -28,7 +28,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="55dp"
             android:layout_toEndOf="@+id/iv_user_portrait"
-            android:text="可莉"
+            android:text="考研人"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="16sp" />
@@ -53,7 +53,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_toEndOf="@+id/iv_user_portrait"
-            android:text="想陪可莉去炸鱼~"
+            android:text="考研加油，目标上岸！"
             android:textColor="@color/white"
             android:textSize="15sp" />
 
@@ -96,32 +96,6 @@
                     android:layout_marginTop="40dp"
                     android:textSize="16sp"
                     android:layout_marginStart="15dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/root_app_color"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_app_color"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/app_color"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="30dp"/>
-
-                <TextView
-                    android:id="@+id/tv_theme_color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="主题颜色"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:layout_toEndOf="@id/iv_app_color"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="34dp"/>
 
             </RelativeLayout>
 
@@ -176,6 +150,64 @@
                     android:layout_marginTop="34dp"/>
 
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/root_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_money"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/money"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"/>
+
+                <TextView
+                    android:id="@+id/tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="打赏作者"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/iv_money"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="34dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="项目源代码地址"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="160dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="https://github.com/G-Pegasus/YanLuApp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+
+            <Button
+                android:id="@+id/btn_star"
+                android:layout_width="120dp"
+                android:layout_height="38dp"
+                android:text="去点个star~"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_selector"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
 

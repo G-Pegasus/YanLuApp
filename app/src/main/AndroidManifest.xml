@@ -18,17 +18,23 @@
         android:theme="@style/Theme.YanLuApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.SearchResultActivity"
+            android:name=".ui.activity.LikeActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.activity.SearchResultActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
             android:name=".ui.activity.SchoolInfoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".ui.activity.SplashActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

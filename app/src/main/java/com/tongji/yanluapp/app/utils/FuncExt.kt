@@ -1,14 +1,19 @@
 package com.tongji.yanluapp.app.utils
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.tongji.yanluapp.R
 import com.tongji.yanluapp.ui.fragment.HomeFragment
 import com.tongji.yanluapp.ui.fragment.InfoFragment
 import com.tongji.yanluapp.ui.fragment.MeFragment
 import com.tongji.yanluapp.ui.fragment.SubjectFragment
+import me.hgj.jetpackmvvm.base.appContext
+import me.hgj.jetpackmvvm.ext.util.toHtml
 
 /**
  * @author: Kana (Tongji)
@@ -37,6 +42,26 @@ fun ViewPager2.initMain(activity: AppCompatActivity): ViewPager2 {
             }
         }
     }
+    return this
+}
+
+// 初始化普通的toolbar 只设置标题
+fun Toolbar.init(titleStr: String = ""): Toolbar {
+    setBackgroundColor(R.color.colorPrimary)
+    title = titleStr
+    return this
+}
+
+
+// 初始 ToolBar 返回键
+fun Toolbar.initClose(
+    titleStr: String = "",
+    backImg: Int = R.mipmap.ic_back,
+    onBack: (toolbar: Toolbar) -> Unit
+): Toolbar {
+    title = titleStr.toHtml()
+    setNavigationIcon(backImg)
+    setNavigationOnClickListener { onBack.invoke(this) }
     return this
 }
 

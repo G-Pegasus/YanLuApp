@@ -50,8 +50,18 @@
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@id/iv_school"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp"
+            tools:ignore="RelativeOverlap" />
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_like"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/like"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"/>
 
     </RelativeLayout>
 

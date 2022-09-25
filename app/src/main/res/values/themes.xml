@@ -16,6 +16,13 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="ImageTranslucentTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <!-- 设置statusBarColor 为透明-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
     <style name="roundedCornerImageStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10dp</item>

@@ -13,7 +13,6 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.tencent.mmkv.MMKV
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.app.dao.LikeSchoolDatabase
-import com.tongji.yanluapp.app.data.LikeSchool.addSchool
 import com.tongji.yanluapp.bean.School
 import me.hgj.jetpackmvvm.base.appContext
 
@@ -26,7 +25,6 @@ import me.hgj.jetpackmvvm.base.appContext
 class SchoolAdapter(private val context: Context, private val mList: MutableList<School>) : RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder>() {
 
     private lateinit var onItemClickListener: OnItemClickListener
-    private val mmkv = MMKV.defaultMMKV()
     private val likeSchoolDao = LikeSchoolDatabase.getDatabase(appContext).likeSchoolDao()
 
     inner class SchoolViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

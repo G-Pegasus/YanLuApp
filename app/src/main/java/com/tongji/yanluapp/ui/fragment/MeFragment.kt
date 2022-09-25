@@ -3,7 +3,6 @@ package com.tongji.yanluapp.ui.fragment
 import android.content.Intent
 import android.os.Bundle
 import com.tencent.mmkv.MMKV
-import com.tongji.yanluapp.app.data.SchoolData
 import com.tongji.yanluapp.databinding.FragmentMeBinding
 import com.tongji.yanluapp.ui.activity.LikeActivity
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity

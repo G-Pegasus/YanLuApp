@@ -18,6 +18,10 @@
         android:theme="@style/Theme.YanLuApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.LoginActivity"
+            android:exported="false" >
+        </activity>
+        <activity
             android:name=".ui.activity.LikeActivity"
             android:exported="false" />
         <activity
@@ -30,22 +34,19 @@
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".ui.activity.SplashActivity"
-            android:theme="@style/ImageTranslucentTheme"
-            android:exported="true" >
-
+            android:exported="false"
+            android:theme="@style/ImageTranslucentTheme">
+        </activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-        </activity>
-
     </application>
 
 </manifest>

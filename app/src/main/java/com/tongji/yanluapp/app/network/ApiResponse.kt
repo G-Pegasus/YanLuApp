@@ -21,3 +21,15 @@ data class ApiResponse<T>(val images: T) : BaseResponse<T>() {
     override fun getResponseMsg() = "errorMsg"
 
 }
+
+data class ApiResponse1<T>(val code: Int, val msg: String, val data: T) : BaseResponse<T>() {
+
+    override fun getResponseCode(): Int = 400
+
+    override fun getResponseData(): T = data
+
+    override fun getResponseMsg(): String = msg
+
+    override fun isSucces(): Boolean = code == 200
+
+}

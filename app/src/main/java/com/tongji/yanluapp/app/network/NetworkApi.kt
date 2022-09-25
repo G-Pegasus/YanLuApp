@@ -27,6 +27,10 @@ val apiService: ApiService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
     NetworkApi.INSTANCE.getApi(ApiService::class.java, ApiService.BASE_URL)
 }
 
+val apiService1: ApiService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+    NetworkApi.INSTANCE.getApi(ApiService::class.java, ApiService.BASE_URL1)
+}
+
 class NetworkApi : BaseNetworkApi() {
 
     companion object {

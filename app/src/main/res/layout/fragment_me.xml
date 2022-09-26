@@ -74,6 +74,32 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/root_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_login"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@mipmap/login"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登录 / 注册"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@+id/iv_login"
+                    android:layout_marginTop="40dp"
+                    android:textSize="16sp"
+                    android:layout_marginStart="15dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/root_user_like"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -82,7 +108,7 @@
                     android:id="@+id/iv_user_like"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="30dp"
                     android:src="@mipmap/user_like"
                     android:layout_marginStart="15dp"/>
 
@@ -93,7 +119,7 @@
                     android:text="收藏院校"
                     android:textColor="@color/black"
                     android:layout_toEndOf="@+id/iv_user_like"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="34dp"
                     android:textSize="16sp"
                     android:layout_marginStart="15dp"/>
 
@@ -184,7 +210,7 @@
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="160dp"/>
+                android:layout_marginTop="100dp"/>
 
             <TextView
                 android:layout_width="wrap_content"

@@ -1,6 +1,8 @@
 package com.tongji.yanluapp.app.utils
 
+import android.content.Context
 import android.graphics.Color
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -52,6 +54,11 @@ fun Toolbar.init(titleStr: String = ""): Toolbar {
     return this
 }
 
+fun Context.showToast(content: String): Toast {
+    val toast = Toast.makeText(this.applicationContext, content, Toast.LENGTH_SHORT)
+    toast.show()
+    return toast
+}
 
 // 初始 ToolBar 返回键
 fun Toolbar.initClose(

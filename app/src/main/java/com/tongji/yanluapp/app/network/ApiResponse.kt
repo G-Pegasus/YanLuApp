@@ -19,7 +19,6 @@ data class ApiResponse<T>(val images: T) : BaseResponse<T>() {
     override fun getResponseData() = images
 
     override fun getResponseMsg() = "errorMsg"
-
 }
 
 data class ApiResponse1<T>(val code: Int, val msg: String, val data: T) : BaseResponse<T>() {

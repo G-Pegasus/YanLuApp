@@ -86,4 +86,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+
+    // PictureSelector 图片上传
+    implementation 'io.github.lucksiege:pictureselector:v3.10.6'
+    implementation 'io.github.lucksiege:ucrop:v3.10.6'
+    implementation 'io.github.lucksiege:ucrop:v3.10.6'
+    implementation 'io.github.lucksiege:camerax:v3.10.6'
+    implementation 'org.xutils:xutils:3.9.0'
 }

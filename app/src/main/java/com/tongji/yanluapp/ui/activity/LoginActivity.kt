@@ -2,6 +2,7 @@ package com.tongji.yanluapp.ui.activity
 
 import android.os.Bundle
 import android.widget.Toast
+import com.tongji.yanluapp.app.utils.CacheUtil
 import com.tongji.yanluapp.databinding.ActivityLoginBinding
 import com.tongji.yanluapp.viewmodel.LoginViewModel
 import me.hgj.jetpackmvvm.base.appContext
@@ -20,15 +21,22 @@ class LoginActivity : BaseActivity1<LoginViewModel, ActivityLoginBinding>() {
                 mViewBind.etPwd.text.toString().isEmpty() ->
                     Toast.makeText(appContext, "请填写密码", Toast.LENGTH_SHORT).show()
                 else -> mViewModel.loginReq(
-                    mViewBind.etPwd.text.toString(),
+                    mViewBind.etUsername.text.toString(),
                     mViewBind.etPwd.text.toString()
                 )
             }
         }
 
+        mViewBind.toRegister.setOnClickListener {
+            startActivity<RegisterActivity>()
+        }
+
         mViewModel.loginResult.observe(this@LoginActivity) { resultState ->
             parseState(resultState, {
                 startActivity<MainActivity>()
+                CacheUtil.setUser(it)
+                CacheUtil.setIsLogin(true)
+                finish()
             }, {
                 //登录失败
                 Toast.makeText(appContext, it.errorMsg, Toast.LENGTH_SHORT).show()

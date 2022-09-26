@@ -1,6 +1,15 @@
 package com.tongji.yanluapp.viewmodel
 
+import androidx.lifecycle.MutableLiveData
+import com.tongji.yanluapp.app.network.apiService1
+import com.tongji.yanluapp.app.network.response.AvatarResponse
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
+import me.hgj.jetpackmvvm.ext.request
+import me.hgj.jetpackmvvm.state.ResultState
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
 
 /**
  * @author: Kana (Tongji)
@@ -9,4 +18,20 @@ import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
  * @email: tongji0x208@gmail.com
  */
 class MeViewModel : BaseViewModel() {
+
+    var avatarResult = MutableLiveData<ResultState<AvatarResponse>>()
+
+    // 上传单张图片
+    fun uploadAvatar(file: File) {
+        val builder = MultipartBody.Builder().setType(MultipartBody.FORM) // 表单类型
+        val requestFile: RequestBody = RequestBody.create(MediaType.parse("image/*"), file)
+        builder.addFormDataPart("file", file.name, requestFile)
+        val part = builder.build().part(0)
+
+        request(
+            { apiService1.uploadImage(part) } // 请求体
+            , avatarResult, // 请求的返回结果
+            false, ""
+        )
+    }
 }

@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="考研加油，永不放弃！"
+        android:text="努力变强，看遍世间美景！"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"

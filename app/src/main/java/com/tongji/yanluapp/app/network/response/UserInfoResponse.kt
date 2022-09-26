@@ -15,5 +15,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class UserInfoResponse(
     val userName: String,
-    val userNumber: String
+    val userNumber: String,
+    val token: String,
+    val avatar: String,
+    val userSign: String
 ) : Parcelable

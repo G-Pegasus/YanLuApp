@@ -9,14 +9,13 @@ import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.tencent.mmkv.MMKV
-import com.tongji.yanluapp.app.network.response.UserInfoResponse
+import com.tongji.yanluapp.R
 import com.tongji.yanluapp.app.utils.CacheUtil
 import com.tongji.yanluapp.app.utils.GlideEngine
 import com.tongji.yanluapp.app.utils.showToast
 import com.tongji.yanluapp.databinding.FragmentMeBinding
 import com.tongji.yanluapp.ui.activity.LikeActivity
 import com.tongji.yanluapp.ui.activity.LoginActivity
-import com.tongji.yanluapp.ui.activity.MainActivity
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
@@ -41,13 +40,27 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
 
-        // mViewBind.tvUserName.text = mmkv.decodeString("userName")
-        // mViewBind.tvUserDes.text = mmkv.decodeString("userDes")
-
         if (CacheUtil.isLogin()) {
-            Glide.with(requireContext()).load(mmkv.decodeString("avatar")).into(mViewBind.ivUserPortrait)
-            mViewBind.tvUserName.text = CacheUtil.getUser()?.userName
-            mViewBind.tvUserDes.text = CacheUtil.getUser()?.userSign
+            if (CacheUtil.getUser()?.user_head != null) {
+                Glide.with(requireContext()).load(CacheUtil.getUser()?.user_head).into(mViewBind.ivUserPortrait)
+            } else {
+                Glide.with(requireContext()).load(R.mipmap.portrait).into(mViewBind.ivUserPortrait)
+            }
+
+            if (CacheUtil.getUser()?.user_name != null) {
+                mViewBind.tvUserName.text = CacheUtil.getUser()?.user_name
+            } else {
+                mViewBind.tvUserName.text = "考研人"
+            }
+
+            if (CacheUtil.getUser()?.user_sign != null) {
+                mViewBind.tvUserDes.text = CacheUtil.getUser()?.user_sign
+            } else {
+                mViewBind.tvUserDes.text = "加油！"
+            }
+
+            mViewBind.tvLogin.text = "退出登录"
+
         } else {
             mViewBind.tvUserName.text = "考研人"
             mViewBind.tvUserDes.text = "加油！"
@@ -84,7 +97,8 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             if (!CacheUtil.isLogin()) {
                 startActivity<LoginActivity>()
             } else {
-                Toast.makeText(appContext, "您已经登录过了呦~", Toast.LENGTH_SHORT).show()
+                CacheUtil.setIsLogin(false)
+                mViewBind.tvLogin.text = "登录 / 注册"
             }
         }
 
@@ -100,28 +114,19 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             requireContext().showToast("您需要先登录哦")
         }
 
-        mViewModel.updateInfoResult.observe(this@MeFragment) { resultState ->
-            parseState(resultState, {
-                mViewBind.tvUserName.text = it.userName
-                mViewBind.tvUserDes.text = it.userSign
-                CacheUtil.setUser(
-                    UserInfoResponse(
-                        it.userName,
-                        CacheUtil.getUser()!!.userNumber,
-                        CacheUtil.getUser()!!.token,
-                        CacheUtil.getUser()!!.avatar,
-                        it.userSign
-                    )
-                )
-            }, {
-                // 更新失败
-                Toast.makeText(appContext, it.errorMsg, Toast.LENGTH_SHORT).show()
-            })
+        mViewModel.userInfo.observe(this@MeFragment) {
+            mViewBind.tvUserName.text = it.userName
+            mViewBind.tvUserDes.text = it.userSign
         }
 
         mViewBind.tvRefresh.setOnClickListener {
-            mViewBind.tvUserName.text = mmkv.decodeString("userName")
-            mViewBind.tvUserDes.text = mmkv.decodeString("userDes")
+            if (CacheUtil.getUserInfo()?.userName == null && CacheUtil.getUserInfo()?.userSign == null) {
+                requireContext().showToast("未获取到更改信息")
+            } else {
+                mViewModel.updateInfo(CacheUtil.getUserInfo()!!.userName, CacheUtil.getUserInfo()!!.userSign)
+                mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
+                mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
+            }
         }
 
         mViewBind.rootMoney.setOnClickListener {

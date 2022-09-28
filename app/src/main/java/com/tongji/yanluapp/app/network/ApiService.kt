@@ -49,8 +49,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("updateInfo")
     suspend fun updateInfo(
-        @Field("user_name") userNumber: String,
+        @Field("user_name") userName: String,
         @Field("user_sign") userSign: String
-    ) : ApiResponse1<UpdateInfoResponse>
+    ) : ApiResponse1<Any>
 
 }

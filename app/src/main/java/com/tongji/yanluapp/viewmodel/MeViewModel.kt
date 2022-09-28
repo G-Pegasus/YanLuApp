@@ -21,7 +21,7 @@ import java.io.File
 class MeViewModel : BaseViewModel() {
 
     var avatarResult = MutableLiveData<ResultState<AvatarResponse>>()
-    var updateInfoResult = MutableLiveData<ResultState<UpdateInfoResponse>>()
+    var userInfo = MutableLiveData<UpdateInfoResponse>()
 
     // 上传单张图片
     fun uploadAvatar(file: File) {
@@ -40,7 +40,10 @@ class MeViewModel : BaseViewModel() {
     fun updateInfo(userName: String, userSign: String) {
         request(
             { apiService1.updateInfo(userName, userSign) } //请求体
-            , updateInfoResult, // 请求的返回结果，请求成功与否都会改变该值，在Activity或fragment中监听回调结果
+            , {
+                userInfo.value?.userName = userName
+                userInfo.value?.userSign = userSign
+              }, {},
             false,
             "正在更新个人信息..."
         )

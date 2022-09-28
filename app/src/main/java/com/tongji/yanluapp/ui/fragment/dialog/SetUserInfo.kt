@@ -1,9 +1,11 @@
 package com.tongji.yanluapp.ui.fragment.dialog
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -11,8 +13,12 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.tencent.mmkv.MMKV
 import com.tongji.yanluapp.R
+import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
+import com.tongji.yanluapp.app.network.response.UserInfoResponse
+import com.tongji.yanluapp.app.utils.CacheUtil
 import com.tongji.yanluapp.viewmodel.MeViewModel
 import me.hgj.jetpackmvvm.base.appContext
+import me.hgj.jetpackmvvm.state.ResultState
 
 /**
  * @Author Tongji
@@ -22,7 +28,7 @@ import me.hgj.jetpackmvvm.base.appContext
 class SetUserInfo : DialogFragment() {
 
     // private val mmkv: MMKV = MMKV.defaultMMKV()
-    private val viewModel by lazy { ViewModelProvider(this)[MeViewModel::class.java] }
+    // private val viewModel by lazy { ViewModelProvider(this)[MeViewModel::class.java] }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,10 +54,9 @@ class SetUserInfo : DialogFragment() {
                     Toast.makeText(appContext, "请填写昵称", Toast.LENGTH_SHORT).show()
                 userDes.isEmpty() ->
                     Toast.makeText(appContext, "请填写签名", Toast.LENGTH_SHORT).show()
-                else -> viewModel.updateInfo(
-                    userName,
-                    userDes
-                )
+                else -> {
+                    CacheUtil.setUserInfo(UpdateInfoResponse(userName, userDes))
+                }
             }
             dismiss()
         }

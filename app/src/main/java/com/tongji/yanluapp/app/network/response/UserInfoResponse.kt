@@ -14,9 +14,9 @@ import kotlinx.parcelize.Parcelize
 @SuppressLint("ParcelCreator")
 @Parcelize
 data class UserInfoResponse(
-    val userName: String,
-    val userNumber: String,
-    val token: String,
-    val avatar: String,
-    val userSign: String
+    val user_name: String,
+    val user_number: String,
+    val user_sign: String,
+    val user_head: String,
+    val token: String
 ) : Parcelable

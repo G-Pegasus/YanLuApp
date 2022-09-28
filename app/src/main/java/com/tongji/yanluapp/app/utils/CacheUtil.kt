@@ -3,6 +3,7 @@ package com.tongji.yanluapp.app.utils
 import android.text.TextUtils
 import com.google.gson.Gson
 import com.tencent.mmkv.MMKV
+import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
 import com.tongji.yanluapp.app.network.response.UserInfoResponse
 
 /**
@@ -39,7 +40,25 @@ object CacheUtil {
             kv.encode("user", Gson().toJson(userResponse))
             setIsLogin(true)
         }
+    }
 
+    fun setUserInfo(updateInfo: UpdateInfoResponse?) {
+        val kv = MMKV.mmkvWithID("app")
+        if (updateInfo == null) {
+            kv.encode("userInfo", "")
+        } else {
+            kv.encode("userInfo", Gson().toJson(updateInfo))
+        }
+    }
+
+    fun getUserInfo() : UpdateInfoResponse? {
+        val kv = MMKV.mmkvWithID("app")
+        val userStr = kv.decodeString("userInfo")
+        return if (TextUtils.isEmpty(userStr)) {
+            null
+        } else {
+            Gson().fromJson(userStr, UpdateInfoResponse::class.java)
+        }
     }
 
     /**

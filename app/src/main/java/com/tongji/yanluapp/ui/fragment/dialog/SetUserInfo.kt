@@ -1,10 +1,13 @@
 package com.tongji.yanluapp.ui.fragment.dialog
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
@@ -29,12 +32,16 @@ class SetUserInfo : DialogFragment() {
 
     // private val mmkv: MMKV = MMKV.defaultMMKV()
     // private val viewModel by lazy { ViewModelProvider(this)[MeViewModel::class.java] }
+    private val imm: InputMethodManager? by lazy { activity?.getSystemService(Context.INPUT_METHOD_SERVICE)
+            as InputMethodManager? }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         return inflater.inflate(R.layout.dialog_setting, container)
     }
 
@@ -43,6 +50,11 @@ class SetUserInfo : DialogFragment() {
         val getDes: EditText = view.findViewById(R.id.input_user_des)
         val tvCancel: TextView = view.findViewById(R.id.tv_cancel_set)
         val tvSure: TextView = view.findViewById(R.id.tv_sure_set)
+
+        imm?.let {
+            getName.requestFocus()
+            it.showSoftInput(getName, InputMethodManager.SHOW_FORCED)
+        }
 
         tvSure.setOnClickListener {
             val userName = getName.text.toString()
@@ -58,11 +70,13 @@ class SetUserInfo : DialogFragment() {
                     CacheUtil.setUserInfo(UpdateInfoResponse(userName, userDes))
                 }
             }
-            dismiss()
+            imm?.hideSoftInputFromWindow(getDes.windowToken, 0)
+            dismissAllowingStateLoss()
         }
 
         tvCancel.setOnClickListener {
-            dismiss()
+            imm?.hideSoftInputFromWindow(getDes.windowToken, 0)
+            dismissAllowingStateLoss()
         }
 
     }

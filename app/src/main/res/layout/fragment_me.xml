@@ -1,242 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.scwang.smart.refresh.layout.SmartRefreshLayout
+    android:id="@+id/refreshLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/root_mine"
-    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
-
+    android:layout_width="match_parent">
     <RelativeLayout
-        android:id="@+id/root_user"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_user_portrait"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="50dp"
-            android:src="@mipmap/portrait"
-            app:shapeAppearanceOverlay="@style/circleImageStyle" />
-
-        <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="55dp"
-            android:layout_toEndOf="@+id/iv_user_portrait"
-            android:text="考研人"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="点我刷新~"
-            android:textColor="@color/white"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_below="@+id/iv_user_portrait"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:id="@+id/tv_user_des"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_user_name"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/iv_user_portrait"
-            android:text="考研加油，目标上岸！"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
-
-    <androidx.cardview.widget.CardView
+        android:id="@+id/root_mine"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:layout_below="@+id/root_user"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="0dp">
+        android:background="@color/colorPrimary">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/root_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_user_portrait"
+                android:layout_width="70dp"
+                android:scaleType="centerCrop"
+                android:layout_height="70dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="50dp"
+                android:src="@mipmap/portrait"
+                app:shapeAppearanceOverlay="@style/circleImageStyle" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="55dp"
+                android:layout_toEndOf="@+id/iv_user_portrait"
+                android:text="考研人"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点我刷新~"
+                android:textColor="@color/white"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/iv_user_portrait"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_user_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_user_name"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/iv_user_portrait"
+                android:text="考研加油，目标上岸！"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="@color/white"
+            android:layout_below="@+id/root_user"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
 
-            <RelativeLayout
-                android:id="@+id/root_login"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_login"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="36dp"
-                    android:src="@mipmap/login"
-                    android:layout_marginStart="15dp"/>
+                <RelativeLayout
+                    android:id="@+id/root_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_login"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="36dp"
+                        android:src="@mipmap/login"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="登录 / 注册"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@+id/iv_login"
+                        android:layout_marginTop="40dp"
+                        android:textSize="16sp"
+                        android:layout_marginStart="15dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/root_user_like"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_user_like"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@mipmap/user_like"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_my_like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="收藏院校"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@+id/iv_user_like"
+                        android:layout_marginTop="34dp"
+                        android:textSize="16sp"
+                        android:layout_marginStart="15dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/root_author_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_author_info"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/about_author"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_about_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关于作者"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/iv_author_info"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="34dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/root_set_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_set_info"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/setting"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_set_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个人设置"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/iv_set_info"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="34dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/root_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_money"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/money"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="打赏作者"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/iv_money"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="34dp"/>
+
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/tv_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="登录 / 注册"
-                    android:textColor="@color/black"
-                    android:layout_toEndOf="@+id/iv_login"
-                    android:layout_marginTop="40dp"
+                    android:text="项目源代码地址"
                     android:textSize="16sp"
-                    android:layout_marginStart="15dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/root_user_like"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_user_like"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@mipmap/user_like"
-                    android:layout_marginStart="15dp"/>
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="100dp"/>
 
                 <TextView
-                    android:id="@+id/tv_my_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="收藏院校"
+                    android:text="https://github.com/G-Pegasus/YanLuApp"
                     android:textColor="@color/black"
-                    android:layout_toEndOf="@+id/iv_user_like"
-                    android:layout_marginTop="34dp"
-                    android:textSize="16sp"
-                    android:layout_marginStart="15dp"/>
+                    android:textSize="15sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"/>
 
-            </RelativeLayout>
+                <Button
+                    android:id="@+id/btn_star"
+                    android:layout_width="120dp"
+                    android:layout_height="38dp"
+                    android:text="去点个star~"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_selector"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"/>
 
-            <RelativeLayout
-                android:id="@+id/root_author_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            </LinearLayout>
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_author_info"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/about_author"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="30dp"/>
+        </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/tv_about_author"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="关于作者"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:layout_toEndOf="@id/iv_author_info"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="34dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/root_set_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_set_info"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/setting"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="30dp"/>
-
-                <TextView
-                    android:id="@+id/tv_set_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="个人设置"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:layout_toEndOf="@id/iv_set_info"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="34dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/root_money"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_money"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/money"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="30dp"/>
-
-                <TextView
-                    android:id="@+id/tv_money"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="打赏作者"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:layout_toEndOf="@id/iv_money"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="34dp"/>
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="项目源代码地址"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="100dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="https://github.com/G-Pegasus/YanLuApp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"/>
-
-            <Button
-                android:id="@+id/btn_star"
-                android:layout_width="120dp"
-                android:layout_height="38dp"
-                android:text="去点个star~"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:background="@drawable/btn_selector"
-                android:layout_gravity="center_horizontal"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
+    </RelativeLayout>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

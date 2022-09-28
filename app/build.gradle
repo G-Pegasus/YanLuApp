@@ -91,4 +91,8 @@ dependencies {
     implementation 'io.github.lucksiege:pictureselector:v3.10.6'
     implementation 'io.github.lucksiege:ucrop:v3.10.6'
     implementation 'org.xutils:xutils:3.9.0'
+
+    // 上拉刷新，下拉加载
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    implementation 'io.github.scwang90:refresh-header-radar:2.0.5'
 }

@@ -1,13 +1,14 @@
 package com.tongji.yanluapp.ui.fragment
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.luck.picture.lib.basic.PictureSelector
 import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnResultCallbackListener
+import com.scwang.smart.refresh.header.BezierRadarHeader
 import com.tencent.mmkv.MMKV
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.app.utils.CacheUtil
@@ -18,12 +19,13 @@ import com.tongji.yanluapp.ui.activity.LikeActivity
 import com.tongji.yanluapp.ui.activity.LoginActivity
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
+import com.tongji.yanluapp.ui.fragment.dialog.EditLogin
 import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel
-import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.demo.app.base.BaseFragment1
 import me.hgj.jetpackmvvm.ext.parseState
+import me.hgj.jetpackmvvm.ext.view.invisible
 import me.hgj.jetpackmvvm.util.startActivity
 import java.io.File
 
@@ -47,14 +49,14 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
                 Glide.with(requireContext()).load(R.mipmap.portrait).into(mViewBind.ivUserPortrait)
             }
 
-            if (CacheUtil.getUser()?.user_name != null) {
-                mViewBind.tvUserName.text = CacheUtil.getUser()?.user_name
+            if (CacheUtil.getUserInfo()?.userName != null) {
+                mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
             } else {
                 mViewBind.tvUserName.text = "考研人"
             }
 
-            if (CacheUtil.getUser()?.user_sign != null) {
-                mViewBind.tvUserDes.text = CacheUtil.getUser()?.user_sign
+            if (CacheUtil.getUserInfo()?.userSign != null) {
+                mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
             } else {
                 mViewBind.tvUserDes.text = "加油！"
             }
@@ -62,8 +64,37 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             mViewBind.tvLogin.text = "退出登录"
 
         } else {
+            Glide.with(requireContext()).load(R.mipmap.portrait).into(mViewBind.ivUserPortrait)
             mViewBind.tvUserName.text = "考研人"
             mViewBind.tvUserDes.text = "加油！"
+        }
+
+        mViewBind.tvRefresh.invisible()
+
+        mViewBind.refreshLayout.setRefreshHeader(BezierRadarHeader(requireContext())
+            .setEnableHorizontalDrag(true)
+            .setPrimaryColorId(R.color.colorPrimary)
+        )
+        mViewBind.refreshLayout.setOnRefreshListener {
+            if (CacheUtil.getUserInfo()?.userName == null && CacheUtil.getUserInfo()?.userSign == null) {
+                requireContext().showToast("未获取到更改信息")
+            } else {
+                mViewModel.updateInfo(
+                    CacheUtil.getUserInfo()!!.userName,
+                    CacheUtil.getUserInfo()!!.userSign
+                )
+                CacheUtil.getUser()?.user_name = CacheUtil.getUserInfo()!!.userName
+                CacheUtil.getUser()?.user_sign = CacheUtil.getUserInfo()!!.userSign
+                mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
+                mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
+                it.finishRefresh(1000)
+            }
+
+            if (!CacheUtil.isLogin()) {
+                Glide.with(requireContext()).load(R.mipmap.portrait).into(mViewBind.ivUserPortrait)
+                mViewBind.tvUserName.text = "考研人"
+                mViewBind.tvUserDes.text = "加油！"
+            }
         }
 
         mViewBind.ivUserPortrait.setOnClickListener {
@@ -97,6 +128,7 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             if (!CacheUtil.isLogin()) {
                 startActivity<LoginActivity>()
             } else {
+                // EditLogin().show(childFragmentManager, "EditLogin")
                 CacheUtil.setIsLogin(false)
                 mViewBind.tvLogin.text = "登录 / 注册"
             }
@@ -119,15 +151,15 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             mViewBind.tvUserDes.text = it.userSign
         }
 
-        mViewBind.tvRefresh.setOnClickListener {
-            if (CacheUtil.getUserInfo()?.userName == null && CacheUtil.getUserInfo()?.userSign == null) {
-                requireContext().showToast("未获取到更改信息")
-            } else {
-                mViewModel.updateInfo(CacheUtil.getUserInfo()!!.userName, CacheUtil.getUserInfo()!!.userSign)
-                mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
-                mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
-            }
-        }
+//        mViewBind.tvRefresh.setOnClickListener {
+//            if (CacheUtil.getUserInfo()?.userName == null && CacheUtil.getUserInfo()?.userSign == null) {
+//                requireContext().showToast("未获取到更改信息")
+//            } else {
+//                mViewModel.updateInfo(CacheUtil.getUserInfo()!!.userName, CacheUtil.getUserInfo()!!.userSign)
+//                mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
+//                mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
+//            }
+//        }
 
         mViewBind.rootMoney.setOnClickListener {
             RewardAuthor().show(childFragmentManager, "RewardAuthor")

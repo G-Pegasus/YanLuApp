@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.tencent.mmkv.MMKV
 import com.tongji.yanluapp.R
+import com.tongji.yanluapp.viewmodel.MeViewModel
+import me.hgj.jetpackmvvm.base.appContext
+
 /**
  * @Author Tongji
  * @Description
@@ -16,7 +21,8 @@ import com.tongji.yanluapp.R
  */
 class SetUserInfo : DialogFragment() {
 
-    private val mmkv: MMKV = MMKV.defaultMMKV()
+    // private val mmkv: MMKV = MMKV.defaultMMKV()
+    private val viewModel by lazy { ViewModelProvider(this)[MeViewModel::class.java] }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,8 +41,18 @@ class SetUserInfo : DialogFragment() {
         tvSure.setOnClickListener {
             val userName = getName.text.toString()
             val userDes = getDes.text.toString()
-            mmkv.encode("userName", userName)
-            mmkv.encode("userDes", userDes)
+            // mmkv.encode("userName", userName)
+            // mmkv.encode("userDes", userDes)
+            when {
+                userName.isEmpty() ->
+                    Toast.makeText(appContext, "请填写昵称", Toast.LENGTH_SHORT).show()
+                userDes.isEmpty() ->
+                    Toast.makeText(appContext, "请填写签名", Toast.LENGTH_SHORT).show()
+                else -> viewModel.updateInfo(
+                    userName,
+                    userDes
+                )
+            }
             dismiss()
         }
 

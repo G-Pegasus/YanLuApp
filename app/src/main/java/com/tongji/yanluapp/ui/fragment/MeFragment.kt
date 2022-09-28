@@ -9,12 +9,14 @@ import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.tencent.mmkv.MMKV
+import com.tongji.yanluapp.app.network.response.UserInfoResponse
 import com.tongji.yanluapp.app.utils.CacheUtil
 import com.tongji.yanluapp.app.utils.GlideEngine
 import com.tongji.yanluapp.app.utils.showToast
 import com.tongji.yanluapp.databinding.FragmentMeBinding
 import com.tongji.yanluapp.ui.activity.LikeActivity
 import com.tongji.yanluapp.ui.activity.LoginActivity
+import com.tongji.yanluapp.ui.activity.MainActivity
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
@@ -39,11 +41,16 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
 
-        mViewBind.tvUserName.text = mmkv.decodeString("userName")
-        mViewBind.tvUserDes.text = mmkv.decodeString("userDes")
+        // mViewBind.tvUserName.text = mmkv.decodeString("userName")
+        // mViewBind.tvUserDes.text = mmkv.decodeString("userDes")
 
         if (CacheUtil.isLogin()) {
             Glide.with(requireContext()).load(mmkv.decodeString("avatar")).into(mViewBind.ivUserPortrait)
+            mViewBind.tvUserName.text = CacheUtil.getUser()?.userName
+            mViewBind.tvUserDes.text = CacheUtil.getUser()?.userSign
+        } else {
+            mViewBind.tvUserName.text = "考研人"
+            mViewBind.tvUserDes.text = "加油！"
         }
 
         mViewBind.ivUserPortrait.setOnClickListener {
@@ -85,8 +92,31 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             AboutAuthor().show(childFragmentManager, "AuthorAbout")
         }
 
-        mViewBind.rootSetInfo.setOnClickListener {
-            SetUserInfo().show(childFragmentManager, "SetUserInfo")
+        if (CacheUtil.isLogin()) {
+            mViewBind.rootSetInfo.setOnClickListener {
+                SetUserInfo().show(childFragmentManager, "SetUserInfo")
+            }
+        } else {
+            requireContext().showToast("您需要先登录哦")
+        }
+
+        mViewModel.updateInfoResult.observe(this@MeFragment) { resultState ->
+            parseState(resultState, {
+                mViewBind.tvUserName.text = it.userName
+                mViewBind.tvUserDes.text = it.userSign
+                CacheUtil.setUser(
+                    UserInfoResponse(
+                        it.userName,
+                        CacheUtil.getUser()!!.userNumber,
+                        CacheUtil.getUser()!!.token,
+                        CacheUtil.getUser()!!.avatar,
+                        it.userSign
+                    )
+                )
+            }, {
+                // 更新失败
+                Toast.makeText(appContext, it.errorMsg, Toast.LENGTH_SHORT).show()
+            })
         }
 
         mViewBind.tvRefresh.setOnClickListener {

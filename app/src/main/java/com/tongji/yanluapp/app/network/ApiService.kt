@@ -2,8 +2,8 @@ package com.tongji.yanluapp.app.network
 
 import com.tongji.yanluapp.app.network.response.AvatarResponse
 import com.tongji.yanluapp.app.network.response.ImageResponse
+import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
 import com.tongji.yanluapp.app.network.response.UserInfoResponse
-import me.hgj.jetpackmvvm.network.BaseResponse
 import okhttp3.MultipartBody
 import retrofit2.http.*
 
@@ -45,5 +45,12 @@ interface ApiService {
     suspend fun uploadImage(
         @Part avatar: MultipartBody.Part
     ): ApiResponse1<AvatarResponse>
+
+    @FormUrlEncoded
+    @POST("updateInfo")
+    suspend fun updateInfo(
+        @Field("user_name") userNumber: String,
+        @Field("user_sign") userSign: String
+    ) : ApiResponse1<UpdateInfoResponse>
 
 }

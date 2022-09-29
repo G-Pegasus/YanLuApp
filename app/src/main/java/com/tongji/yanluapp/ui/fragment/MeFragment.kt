@@ -1,7 +1,6 @@
 package com.tongji.yanluapp.ui.fragment
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.luck.picture.lib.basic.PictureSelector
@@ -19,7 +18,6 @@ import com.tongji.yanluapp.ui.activity.LikeActivity
 import com.tongji.yanluapp.ui.activity.LoginActivity
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
-import com.tongji.yanluapp.ui.fragment.dialog.EditLogin
 import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel

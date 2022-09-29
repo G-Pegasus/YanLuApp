@@ -19,6 +19,7 @@ import com.tongji.yanluapp.R
 import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
 import com.tongji.yanluapp.app.network.response.UserInfoResponse
 import com.tongji.yanluapp.app.utils.CacheUtil
+import com.tongji.yanluapp.app.utils.showToast
 import com.tongji.yanluapp.viewmodel.MeViewModel
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.state.ResultState
@@ -68,6 +69,7 @@ class SetUserInfo : DialogFragment() {
                     Toast.makeText(appContext, "请填写签名", Toast.LENGTH_SHORT).show()
                 else -> {
                     CacheUtil.setUserInfo(UpdateInfoResponse(userName, userDes))
+                    requireContext().showToast("修改完成，记得上拉刷新哦")
                 }
             }
             imm?.hideSoftInputFromWindow(getDes.windowToken, 0)

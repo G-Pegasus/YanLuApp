@@ -1,9 +1,6 @@
 package com.tongji.yanluapp.app.network
 
-import com.tongji.yanluapp.app.network.response.AvatarResponse
-import com.tongji.yanluapp.app.network.response.ImageResponse
-import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
-import com.tongji.yanluapp.app.network.response.UserInfoResponse
+import com.tongji.yanluapp.app.network.response.*
 import okhttp3.MultipartBody
 import retrofit2.http.*
 
@@ -23,7 +20,7 @@ interface ApiService {
     }
 
     @GET("HPImageArchive.aspx?format=js&idx=0&n=1")
-    suspend fun getSplashImage(): ApiResponse<ArrayList<ImageResponse>>
+    suspend fun getSplashImage() : ApiResponse<ArrayList<ImageResponse>>
 
     @FormUrlEncoded
     @POST("login")
@@ -40,17 +37,23 @@ interface ApiService {
         @Field("user_password") pwd: String
     ): ApiResponse1<Any>
 
+    // 更新头像
     @Multipart
     @POST("updateHead")
     suspend fun uploadImage(
         @Part avatar: MultipartBody.Part
     ): ApiResponse1<AvatarResponse>
 
+    // 更新用户信息
     @FormUrlEncoded
     @POST("updateInfo")
     suspend fun updateInfo(
         @Field("user_name") userName: String,
         @Field("user_sign") userSign: String
     ) : ApiResponse1<Any>
+
+    // 获取首页轮播图
+    @POST("getSlideShowImage")
+    suspend fun getBannerImage() : ApiResponse1<BannerImageResponse>
 
 }

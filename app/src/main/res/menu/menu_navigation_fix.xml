@@ -4,20 +4,20 @@
     <item
         android:id="@+id/navigation_home"
         android:checked="true"
-        android:icon="@mipmap/home"
+        android:icon="@mipmap/home2"
         android:title="@string/home" />
     <item
         android:id="@+id/navigation_subject"
-        android:icon="@mipmap/subject"
+        android:icon="@mipmap/subject2"
         android:title="@string/subject" />
     <item
         android:id="@+id/navigation_info"
-        android:icon="@mipmap/info"
+        android:icon="@mipmap/info2"
         android:title="@string/info" />
 
     <item
         android:id="@+id/navigation_mine"
-        android:icon="@mipmap/mine"
+        android:icon="@mipmap/mine2"
         android:title="@string/mine" />
 
 </menu>

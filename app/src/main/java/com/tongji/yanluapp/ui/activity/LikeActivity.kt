@@ -11,7 +11,7 @@ import com.tongji.yanluapp.databinding.ActivityLikeBinding
 import com.tongji.yanluapp.ui.adapter.SchoolAdapter
 import com.tongji.yanluapp.viewmodel.LikeSchoolViewModel
 import me.hgj.jetpackmvvm.base.appContext
-import me.hgj.jetpackmvvm.demo.app.base.BaseActivity1
+import com.tongji.yanluapp.app.base.BaseActivity1
 
 class LikeActivity : BaseActivity1<LikeSchoolViewModel, ActivityLikeBinding>() {
 

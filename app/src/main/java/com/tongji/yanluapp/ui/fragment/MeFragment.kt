@@ -21,7 +21,7 @@ import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel
-import me.hgj.jetpackmvvm.demo.app.base.BaseFragment1
+import com.tongji.yanluapp.app.base.BaseFragment1
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.ext.view.invisible
 import me.hgj.jetpackmvvm.util.startActivity

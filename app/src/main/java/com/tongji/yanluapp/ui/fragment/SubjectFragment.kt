@@ -3,7 +3,7 @@ package com.tongji.yanluapp.ui.fragment
 import android.os.Bundle
 import com.tongji.yanluapp.databinding.FragmentSubjectBinding
 import com.tongji.yanluapp.viewmodel.SubjectViewModel
-import me.hgj.jetpackmvvm.demo.app.base.BaseFragment1
+import com.tongji.yanluapp.app.base.BaseFragment1
 
 /**
  * @author: Kana (Tongji)

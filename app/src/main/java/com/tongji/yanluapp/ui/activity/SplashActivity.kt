@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.tongji.yanluapp.databinding.ActivitySplashBinding
 import com.tongji.yanluapp.viewmodel.SplashViewModel
 import kotlinx.coroutines.delay
-import me.hgj.jetpackmvvm.demo.app.base.BaseActivity1
+import com.tongji.yanluapp.app.base.BaseActivity1
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
 

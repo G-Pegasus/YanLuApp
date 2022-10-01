@@ -17,7 +17,7 @@ import com.tongji.yanluapp.ui.activity.SearchResultActivity
 import com.tongji.yanluapp.ui.adapter.SchoolAdapter
 import com.tongji.yanluapp.viewmodel.InfoViewModel
 import me.hgj.jetpackmvvm.base.appContext
-import me.hgj.jetpackmvvm.demo.app.base.BaseFragment1
+import com.tongji.yanluapp.app.base.BaseFragment1
 
 /**
  * @author: Kana (Tongji)

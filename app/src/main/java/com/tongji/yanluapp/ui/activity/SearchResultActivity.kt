@@ -13,7 +13,7 @@ import com.tongji.yanluapp.databinding.ActivitySearchResultBinding
 import com.tongji.yanluapp.ui.adapter.SchoolAdapter
 import com.tongji.yanluapp.viewmodel.SearchResultViewModel
 import me.hgj.jetpackmvvm.base.appContext
-import me.hgj.jetpackmvvm.demo.app.base.BaseActivity1
+import com.tongji.yanluapp.app.base.BaseActivity1
 
 class SearchResultActivity : BaseActivity1<SearchResultViewModel, ActivitySearchResultBinding>() {
 

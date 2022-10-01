@@ -5,18 +5,24 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission-sdk-23 android:name="android.permission.WRITE_MEDIA_STORAGE" />
     <uses-permission-sdk-23 android:name="android.permission.WRITE_SETTINGS" />
+
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
     <uses-permission-sdk-23 android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAG" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
@@ -28,18 +34,21 @@
         android:icon="@mipmap/yanlu"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/yanlu"
         android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/yanlu"
         android:supportsRtl="true"
         android:theme="@style/Theme.YanLuApp"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.activity.ReleaseActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.activity.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:launchMode="singleTask"
-            android:exported="false">
+            android:exported="false"
+            android:launchMode="singleTask">
         </activity>
         <activity
             android:name=".ui.activity.LikeActivity"

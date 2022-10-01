@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.zhpan.bannerview.BannerViewPager
-        android:id="@+id/banner"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="25dp"/>
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
-</RelativeLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tb_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            app:tabBackground="@null"
+            app:tabGravity="center"
+            app:tabTextColor="#74ADB3"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorColor="@color/white"
+            app:tabSelectedTextColor="@color/white"
+            app:tabPaddingEnd="25dp"
+            app:tabPaddingStart="25dp"
+            app:tabRippleColor="@null"/>
+
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="12"
+        android:overScrollMode="never"/>
+
+</LinearLayout>

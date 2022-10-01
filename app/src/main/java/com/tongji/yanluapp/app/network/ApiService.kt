@@ -4,7 +4,6 @@ import com.tongji.yanluapp.app.network.response.*
 import okhttp3.MultipartBody
 import retrofit2.http.*
 
-
 /**
  * @author: Kana (Tongji)
  * @date: 2022/9/25 14:47
@@ -55,5 +54,15 @@ interface ApiService {
     // 获取首页轮播图
     @POST("getSlideShowImage")
     suspend fun getBannerImage() : ApiResponse1<BannerImageResponse>
+
+    // 发布帖子
+    @POST("releasePost")
+    suspend fun releasePost(
+
+    ) : ApiResponse1<Any>
+
+    // 获取帖子
+    @POST("postList")
+    suspend fun getPost() : ApiResponse1<Any>
 
 }

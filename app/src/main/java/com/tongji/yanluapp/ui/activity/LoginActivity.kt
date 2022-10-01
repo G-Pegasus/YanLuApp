@@ -8,7 +8,7 @@ import com.tongji.yanluapp.app.utils.CacheUtil
 import com.tongji.yanluapp.databinding.ActivityLoginBinding
 import com.tongji.yanluapp.viewmodel.LoginViewModel
 import me.hgj.jetpackmvvm.base.appContext
-import me.hgj.jetpackmvvm.demo.app.base.BaseActivity1
+import com.tongji.yanluapp.app.base.BaseActivity1
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
 

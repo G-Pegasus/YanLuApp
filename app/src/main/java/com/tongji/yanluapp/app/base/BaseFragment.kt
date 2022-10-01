@@ -1,4 +1,4 @@
-package me.hgj.jetpackmvvm.demo.app.base
+package com.tongji.yanluapp.app.base
 
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding

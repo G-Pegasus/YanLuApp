@@ -1,16 +1,12 @@
 package com.tongji.yanluapp.ui.fragment
 
 import android.os.Bundle
-import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.showToast
+import androidx.fragment.app.Fragment
+import com.google.android.material.tabs.TabLayoutMediator
+import com.tongji.yanluapp.app.utils.init
 import com.tongji.yanluapp.databinding.FragmentHomeBinding
-import com.tongji.yanluapp.ui.adapter.BannerAdapter
 import com.tongji.yanluapp.viewmodel.HomeViewModel
-import com.zhpan.bannerview.BannerViewPager
-import com.zhpan.bannerview.constants.PageStyle
-import com.zhpan.indicator.enums.IndicatorStyle
-import me.hgj.jetpackmvvm.demo.app.base.BaseFragment1
-import me.hgj.jetpackmvvm.ext.parseState
+import com.tongji.yanluapp.app.base.BaseFragment1
 
 /**
  * @author: Kana (Tongji)
@@ -20,25 +16,17 @@ import me.hgj.jetpackmvvm.ext.parseState
  */
 class HomeFragment : BaseFragment1<HomeViewModel, FragmentHomeBinding>() {
 
-    private lateinit var bannerViewPager: BannerViewPager<String>
-
     override fun initView(savedInstanceState: Bundle?) {
-        mViewModel.getBannerImage()
-
-        bannerViewPager = view!!.findViewById(R.id.banner)
-        bannerViewPager.adapter = BannerAdapter(requireContext())
-        bannerViewPager.setLifecycleRegistry(lifecycle)
-        bannerViewPager.setIndicatorStyle(IndicatorStyle.DASH)
-        bannerViewPager.setPageStyle(PageStyle.MULTI_PAGE_SCALE)
-        bannerViewPager.setInterval(2000)
-        mViewModel.bannerResult.observe(viewLifecycleOwner) { resultState ->
-            parseState(resultState, {
-                bannerViewPager.create(it.fileList)
-            }, {
-                requireContext().showToast(it.errorMsg)
-            })
-        }
-
+        val fragments = ArrayList<Fragment>()
+        val tabTitles = arrayListOf("推荐", "分享")
+        fragments.add(RecFragment())
+        fragments.add(ShareFragment())
+        mViewBind.vpHome.init(this, fragments)
+        mViewBind.vpHome.offscreenPageLimit = 2
+        TabLayoutMediator(mViewBind.tbHome, mViewBind.vpHome, true, true) {
+                tab, position ->
+            tab.text = tabTitles[position]
+        }.attach()
     }
 
     override fun dismissLoading() {

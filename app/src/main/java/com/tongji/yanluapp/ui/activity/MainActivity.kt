@@ -6,7 +6,7 @@ import com.tongji.yanluapp.app.utils.init
 import com.tongji.yanluapp.app.utils.initMain
 import com.tongji.yanluapp.databinding.ActivityMainBinding
 import com.tongji.yanluapp.viewmodel.MainViewModel
-import me.hgj.jetpackmvvm.demo.app.base.BaseActivity1
+import com.tongji.yanluapp.app.base.BaseActivity1
 
 class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
 

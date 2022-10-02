@@ -1,16 +1,11 @@
 package com.tongji.yanluapp.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.luck.picture.lib.basic.PictureSelector
-import com.luck.picture.lib.config.PictureConfig
-import com.luck.picture.lib.config.PictureMimeType
-import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.config.SelectMimeType.ofImage
-import com.luck.picture.lib.config.SelectModeConfig
 import com.luck.picture.lib.config.SelectModeConfig.MULTIPLE
 import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnResultCallbackListener

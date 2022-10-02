@@ -64,7 +64,7 @@ interface ApiService {
     ) : ApiResponse1<Any>
 
     // 获取帖子
-    @POST("postList")
-    suspend fun getPost() : ApiResponse1<Any>
+    @POST("getPostList")
+    suspend fun getPost() : ApiResponse1<ArrayList<PostData>>
 
 }

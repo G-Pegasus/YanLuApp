@@ -72,7 +72,8 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
         mViewBind.refreshLayout.setRefreshHeader(BezierRadarHeader(requireContext())
             .setEnableHorizontalDrag(true)
             .setPrimaryColorId(R.color.colorPrimary)
-        )
+        ).setHeaderHeight(60F)
+
         mViewBind.refreshLayout.setOnRefreshListener {
             if (CacheUtil.getUserInfo()?.userName == null && CacheUtil.getUserInfo()?.userSign == null) {
                 requireContext().showToast("未获取到更改信息")

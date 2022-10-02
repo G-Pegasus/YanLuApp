@@ -56,9 +56,11 @@ interface ApiService {
     suspend fun getBannerImage() : ApiResponse1<BannerImageResponse>
 
     // 发布帖子
+    @Multipart
     @POST("releasePost")
     suspend fun releasePost(
-
+        @Part("post_content") content: String,
+        @Part images: List<MultipartBody.Part>
     ) : ApiResponse1<Any>
 
     // 获取帖子

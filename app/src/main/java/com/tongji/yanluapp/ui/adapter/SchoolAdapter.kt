@@ -22,7 +22,8 @@ import me.hgj.jetpackmvvm.base.appContext
  * @description:
  * @email: tongji0x208@gmail.com
  */
-class SchoolAdapter(private val context: Context, private val mList: MutableList<School>) : RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder>() {
+class SchoolAdapter(private val context: Context, private val mList: MutableList<School>)
+    : RecyclerView.Adapter<SchoolAdapter.SchoolViewHolder>() {
 
     private lateinit var onItemClickListener: OnItemClickListener
     private val likeSchoolDao = LikeSchoolDatabase.getDatabase(appContext).likeSchoolDao()

@@ -27,7 +27,7 @@ data class ApiResponse1<T>(val code: Int, val msg: String, val data: T) : BaseRe
 
     override fun getResponseData(): T = data
 
-    override fun getResponseMsg(): String = msg
+    override fun getResponseMsg(): String = "请先注册或者登录哦"
 
     override fun isSucces(): Boolean = code == 200
 

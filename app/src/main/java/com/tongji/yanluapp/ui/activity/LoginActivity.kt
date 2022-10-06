@@ -40,7 +40,12 @@ class LoginActivity : BaseActivity1<LoginViewModel, ActivityLoginBinding>() {
                     Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NO_HISTORY
                 startActivity(intent)
                 CacheUtil.setUser(it)
-                CacheUtil.setUserInfo(UpdateInfoResponse(it.user_name, it.user_sign))
+                if (it.user_name != "" && it.user_sign != "") {
+                    CacheUtil.setUserInfo(UpdateInfoResponse(it.user_name, it.user_sign))
+                } else {
+                    CacheUtil.setUserInfo(UpdateInfoResponse("考研人", "加油"))
+                }
+
                 CacheUtil.setIsLogin(true)
                 // finish()
             }, {

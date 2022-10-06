@@ -42,19 +42,19 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
 
         if (CacheUtil.isLogin()) {
-            if (CacheUtil.getUser()?.user_head != null) {
+            if (CacheUtil.getUser()?.user_head != "") {
                 Glide.with(requireContext()).load(CacheUtil.getUser()?.user_head).into(mViewBind.ivUserPortrait)
             } else {
                 Glide.with(requireContext()).load(R.mipmap.portrait).into(mViewBind.ivUserPortrait)
             }
 
-            if (CacheUtil.getUserInfo()?.userName != null) {
+            if (CacheUtil.getUserInfo()?.userName != "") {
                 mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
             } else {
                 mViewBind.tvUserName.text = "考研人"
             }
 
-            if (CacheUtil.getUserInfo()?.userSign != null) {
+            if (CacheUtil.getUserInfo()?.userSign != "") {
                 mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
             } else {
                 mViewBind.tvUserDes.text = "加油！"
@@ -90,7 +90,6 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
                 CacheUtil.getUser()?.user_sign = CacheUtil.getUserInfo()!!.userSign
                 mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
                 mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
-                it.finishRefresh(1000)
             }
 
             if (!CacheUtil.isLogin()) {
@@ -98,6 +97,7 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
                 mViewBind.tvUserName.text = "考研人"
                 mViewBind.tvUserDes.text = "加油！"
             }
+            it.finishRefresh(800)
         }
 
         mViewBind.ivUserPortrait.setOnClickListener {

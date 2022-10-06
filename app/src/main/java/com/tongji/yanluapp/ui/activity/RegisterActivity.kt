@@ -6,6 +6,7 @@ import com.tongji.yanluapp.app.utils.showToast
 import com.tongji.yanluapp.databinding.ActivityRegisterBinding
 import com.tongji.yanluapp.viewmodel.LoginViewModel
 import com.tongji.yanluapp.app.base.BaseActivity1
+import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
 
@@ -35,6 +36,11 @@ class RegisterActivity : BaseActivity1<LoginViewModel, ActivityRegisterBinding>(
                 startActivity<MainActivity>()
                 CacheUtil.setIsLogin(true)
                 CacheUtil.setUser(it)
+                if (it.user_name != "" && it.user_sign != "") {
+                    CacheUtil.setUserInfo(UpdateInfoResponse(it.user_name, it.user_sign))
+                } else {
+                    CacheUtil.setUserInfo(UpdateInfoResponse("考研人", "加油"))
+                }
                 finish()
             }, {
                 this.showToast(it.errorMsg)

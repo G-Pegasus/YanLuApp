@@ -16,6 +16,7 @@ import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.bannerview.constants.PageStyle
 import com.zhpan.indicator.enums.IndicatorStyle
 import com.tongji.yanluapp.app.base.BaseFragment1
+import com.tongji.yanluapp.app.utils.CacheUtil
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.adapter.ArticleAdapter
 import me.hgj.jetpackmvvm.base.appContext
@@ -34,7 +35,9 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
     private lateinit var articleAdapter: ArticleAdapter
 
     override fun initView(savedInstanceState: Bundle?) {
-        mViewModel.getBannerImage()
+        if (CacheUtil.isLogin()) {
+            mViewModel.getBannerImage()
+        }
 
         bannerViewPager = view!!.findViewById(R.id.banner)
         bannerViewPager.adapter = BannerAdapter(requireContext())
@@ -53,7 +56,9 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
         val rvArticle = mViewBind.rvRec
         rvArticle.layoutManager = LinearLayoutManager(appContext)
 
-        mViewModel.getArticles()
+        if (CacheUtil.isLogin()) {
+            mViewModel.getArticles()
+        }
         mViewModel.articleResult.observe(viewLifecycleOwner) { resultState ->
             parseState(resultState, {
                 it.shuffle()
@@ -80,9 +85,14 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
         ).setHeaderHeight(60F).setPrimaryColorsId(R.color.colorPrimary)
 
         mViewBind.recRefresh.setOnRefreshListener {
-            mViewModel.getArticles()
-            articleAdapter.notifyDataSetChanged()
-            it.finishRefresh(800)
+            if (CacheUtil.isLogin()) {
+                mViewModel.getArticles()
+                articleAdapter.notifyDataSetChanged()
+                it.finishRefresh(800)
+            } else {
+                requireContext().showToast("请登录以加载更多数据")
+                it.finishRefresh(800)
+            }
         }
 
     }

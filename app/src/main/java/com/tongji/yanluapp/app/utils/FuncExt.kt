@@ -37,9 +37,9 @@ fun ViewPager2.initMain(activity: AppCompatActivity): ViewPager2 {
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 -> HomeFragment()
-                1 -> SubjectFragment()
-                2 -> InfoFragment()
-                3 -> MeFragment()
+                // 1 -> SubjectFragment()
+                1 -> InfoFragment()
+                2 -> MeFragment()
                 else -> HomeFragment()
             }
         }

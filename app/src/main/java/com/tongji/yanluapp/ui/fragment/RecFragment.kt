@@ -3,6 +3,8 @@ package com.tongji.yanluapp.ui.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
@@ -18,6 +20,7 @@ import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.adapter.ArticleAdapter
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
+import java.util.*
 
 /**
  * @author: Kana (Tongji)
@@ -53,8 +56,11 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
         mViewModel.getArticles()
         mViewModel.articleResult.observe(viewLifecycleOwner) { resultState ->
             parseState(resultState, {
+                it.shuffle()
                 articleAdapter = ArticleAdapter(requireContext(), it)
                 rvArticle.adapter = articleAdapter
+                rvArticle.layoutAnimation =
+                    LayoutAnimationController(AnimationUtils.loadAnimation(appContext, R.anim.animation))
 
                 articleAdapter.setOnItemClickListener(object : ArticleAdapter.OnItemClickListener {
                     override fun onItemClick(view: View, position: Int) {

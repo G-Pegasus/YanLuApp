@@ -41,6 +41,8 @@ class ArticleAdapter(private val context: Context, private val articleList: Arra
             holder.tvFrom.text = "文章来自CSDN"
         } else if (articleList[position].recommend_url.contains("juejin")) {
             holder.tvFrom.text = "文章来自掘金"
+        } else {
+            holder.tvFrom.text = "文章来自知乎"
         }
 
         holder.cvArticle.setOnClickListener {

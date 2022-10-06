@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.scwang.smart.refresh.layout.SmartRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rec_refresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="ScrollViewCount,UselessParent">
+    android:layout_height="match_parent">
 
-    <com.scwang.smart.refresh.layout.SmartRefreshLayout
-        android:id="@+id/rec_refresh"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="ScrollViewCount,UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,19 +31,11 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="滑到底啦~"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:layout_below="@+id/rv_rec"
-                android:gravity="center" />
-
         </RelativeLayout>
 
-    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </androidx.core.widget.NestedScrollView>
 
-</androidx.core.widget.NestedScrollView>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
 

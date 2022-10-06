@@ -1,5 +1,6 @@
 package com.tongji.yanluapp.ui.fragment.dialog
 
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -9,8 +10,9 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.CacheUtil
+import com.tongji.yanluapp.viewmodel.DialogViewModel
 
 /**
  * @author: Kana (Tongji)
@@ -18,7 +20,22 @@ import com.tongji.yanluapp.app.utils.CacheUtil
  * @description:
  * @email: tongji0x208@gmail.com
  */
-class EditLogin : DialogFragment() {
+class DeletePost : DialogFragment() {
+
+    private val viewModel by lazy { ViewModelProvider(this)[DialogViewModel::class.java] }
+    private lateinit var mOnItemClickListener: OnItemClickListener
+
+    fun newInstance(tittle: String): DeletePost {
+        val fragment = DeletePost()
+        val bundle = Bundle()
+        bundle.putString("postId", tittle)
+        fragment.arguments = bundle
+        return fragment
+    }
+
+    fun setOnClickListener(listener: OnItemClickListener) {
+        this.mOnItemClickListener = listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +44,7 @@ class EditLogin : DialogFragment() {
     ): View? {
         dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        return inflater.inflate(R.layout.dialog_tip, container)
+        return inflater.inflate(R.layout.dialog_delete_post, container)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,7 +52,9 @@ class EditLogin : DialogFragment() {
         val tvSure: TextView = view.findViewById(R.id.tv_sure_set)
 
         tvSure.setOnClickListener {
-            CacheUtil.setIsLogin(false)
+            mOnItemClickListener.onItemClick()
+            val postId = arguments!!.getString("postId")
+            viewModel.deletePost(postId!!)
             dismissAllowingStateLoss()
         }
 
@@ -43,5 +62,9 @@ class EditLogin : DialogFragment() {
             dismissAllowingStateLoss()
         }
 
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick()
     }
 }

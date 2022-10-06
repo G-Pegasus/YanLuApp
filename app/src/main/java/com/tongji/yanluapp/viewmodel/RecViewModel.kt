@@ -2,6 +2,7 @@ package com.tongji.yanluapp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.tongji.yanluapp.app.network.apiService1
+import com.tongji.yanluapp.app.network.response.ArticleResponse
 import com.tongji.yanluapp.app.network.response.BannerImageResponse
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
@@ -16,8 +17,13 @@ import me.hgj.jetpackmvvm.state.ResultState
 class RecViewModel : BaseViewModel() {
 
     val bannerResult = MutableLiveData<ResultState<BannerImageResponse>>()
+    val articleResult = MutableLiveData<ResultState<ArrayList<ArticleResponse>>>()
 
     fun getBannerImage() {
         request({ apiService1.getBannerImage() }, bannerResult)
+    }
+
+    fun getArticles() {
+        request({ apiService1.getRecommendList() }, articleResult)
     }
 }

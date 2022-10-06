@@ -40,6 +40,13 @@
         android:theme="@style/Theme.YanLuApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.SelfPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.PhotoShowActivity"
+            android:exported="false"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
             android:name=".ui.activity.ReleaseActivity"
             android:exported="false" />
         <activity
@@ -48,8 +55,7 @@
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="false"
-            android:launchMode="singleTask">
-        </activity>
+            android:launchMode="singleTask"></activity>
         <activity
             android:name=".ui.activity.LikeActivity"
             android:exported="false" />
@@ -74,8 +80,7 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-        </activity>
+            android:windowSoftInputMode="adjustPan|stateHidden"></activity>
     </application>
 
 </manifest>

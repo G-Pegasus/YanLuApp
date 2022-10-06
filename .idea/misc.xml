@@ -15,12 +15,15 @@
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_login.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_main.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_main2.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_photo_show.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_register.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_release.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_school_info.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_search_result.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_self_post.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/activity_splash.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/dialog_author.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/dialog_delete_post.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/dialog_money.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/dialog_setting.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/dialog_tip.xml" value="0.3" />
@@ -36,7 +39,11 @@
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_image_post.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_post.xml" value="0.2989583333333333" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_post_image.xml" value="0.2989583333333333" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_rec.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_school.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_self_post.xml" value="0.3" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/item_self_post_image.xml" value="0.2989583333333333" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/layout/layout_photo.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/menu/home_menu.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/menu/menu_navigation_fix.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/app/src/main/res/menu/menu_search.xml" value="0.3" />

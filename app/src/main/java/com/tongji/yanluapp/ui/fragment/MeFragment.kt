@@ -22,6 +22,7 @@ import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel
 import com.tongji.yanluapp.app.base.BaseFragment1
+import com.tongji.yanluapp.ui.activity.SelfPostActivity
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.ext.view.invisible
 import me.hgj.jetpackmvvm.util.startActivity
@@ -67,7 +68,10 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             mViewBind.tvUserDes.text = "加油！"
         }
 
-        mViewBind.tvRefresh.invisible()
+        // 跳转个人动态界面
+        mViewBind.tvSelfPost.setOnClickListener {
+            startActivity<SelfPostActivity>()
+        }
 
         mViewBind.refreshLayout.setRefreshHeader(BezierRadarHeader(requireContext())
             .setEnableHorizontalDrag(true)
@@ -129,6 +133,7 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             } else {
                 // EditLogin().show(childFragmentManager, "EditLogin")
                 CacheUtil.setIsLogin(false)
+                mViewBind.refreshLayout.autoRefresh()
                 mViewBind.tvLogin.text = "登录 / 注册"
             }
         }

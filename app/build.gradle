@@ -95,8 +95,15 @@ dependencies {
     // 上拉刷新，下拉加载
     implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
     implementation 'io.github.scwang90:refresh-header-radar:2.0.5'
+    implementation 'io.github.scwang90:refresh-header-material:2.0.5'
 
     // Banner
     implementation 'com.github.zhpanvip:bannerviewpager:3.5.7'
+
+    // RV 分组框架
+    implementation 'com.github.donkingliang:GroupedRecyclerViewAdapter:2.4.3'
+
+    // 图片缩放展示库
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 
 }

@@ -18,8 +18,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/iv_delete_post_1_self"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/delete_post"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/todo" />
+
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_post_avatar_1"
+            android:id="@+id/iv_post_avatar_1_self"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="15dp"
@@ -29,34 +39,34 @@
             app:shapeAppearanceOverlay="@style/circleImageStyle" />
 
         <TextView
-            android:id="@+id/tv_post_user_name_1"
+            android:id="@+id/tv_post_user_name_1_self"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/iv_post_avatar_1"
+            android:layout_toEndOf="@+id/iv_post_avatar_1_self"
             android:text="挽弦慕笙"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_post_time_1"
+            android:id="@+id/tv_post_time_1_self"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_post_user_name_1"
+            android:layout_below="@id/tv_post_user_name_1_self"
             android:layout_marginStart="14dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@+id/iv_post_avatar_1"
+            android:layout_toEndOf="@+id/iv_post_avatar_1_self"
             android:text="a day ago"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tv_post_content_1"
+            android:id="@+id/tv_post_content_1_self"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/iv_post_avatar_1"
+            android:layout_below="@id/iv_post_avatar_1_self"
             android:layout_marginStart="12dp"
             android:layout_marginTop="18dp"
             android:text="今天数学复习的不错！"
@@ -64,30 +74,30 @@
             android:textSize="16sp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_post_image"
+            android:id="@+id/rv_post_image_self"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_post_content_1"
+            android:layout_below="@+id/tv_post_content_1_self"
             android:layout_marginTop="8dp" />
 
         <LinearLayout
-            android:id="@+id/root_like_1"
+            android:id="@+id/root_like_1_self"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rv_post_image"
+            android:layout_below="@+id/rv_post_image_self"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_post_like_1"
+                android:id="@+id/iv_post_like_1_self"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@mipmap/post_like" />
 
             <TextView
-                android:id="@+id/tv_like_num_1"
+                android:id="@+id/tv_like_num_1_self"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -98,13 +108,13 @@
                 android:textSize="16sp" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_post_comment_1"
+                android:id="@+id/iv_post_comment_1_self"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@mipmap/comment" />
 
             <TextView
-                android:id="@+id/tv_comment_num_1"
+                android:id="@+id/tv_comment_num_1_self"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

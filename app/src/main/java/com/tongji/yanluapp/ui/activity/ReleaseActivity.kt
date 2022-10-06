@@ -34,7 +34,7 @@ class ReleaseActivity : BaseActivity1<ReleaseViewModel, ActivityReleaseBinding>(
 
         val rvImage = mViewBind.rvImage
         rvImage.layoutManager = GridLayoutManager(appContext, 3)
-        imageAdapter = ImageAdapter(3)
+        imageAdapter = ImageAdapter(this@ReleaseActivity, 3)
         rvImage.adapter = imageAdapter
         imageAdapter.setOnItemClickListener(object : ImageAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {

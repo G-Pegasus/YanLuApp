@@ -1,8 +1,10 @@
 package com.tongji.yanluapp.ui.fragment
 
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.BezierRadarHeader
+import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.databinding.FragmentShareBinding
 import com.tongji.yanluapp.viewmodel.ShareViewModel
@@ -34,30 +36,36 @@ class ShareFragment : BaseFragment1<ShareViewModel, FragmentShareBinding>() {
         mViewModel.getPost()
         mViewModel.postResult.observe(viewLifecycleOwner) { resultState ->
             parseState(resultState, {
-                postAdapter = PostAdapter(it)
+                postAdapter = PostAdapter(requireContext(), it)
                 rvPost.adapter = postAdapter
+
+                postAdapter.setOnItemClickListener(object : PostAdapter.OnItemClickListener {
+                    override fun onItemClick(view: View, position: Int) {
+                        mViewModel.postLike(it[position].post_id)
+                        mViewBind.shareRefresh.autoRefresh()
+                    }
+
+                    override fun onItemLongClick(view: View, position: Int) {}
+                })
             })
         }
 
         mViewBind.shareRefresh.setRefreshHeader(
-            BezierRadarHeader(requireContext())
-            .setEnableHorizontalDrag(true)
-            .setPrimaryColorId(R.color.colorPrimary)
-        ).setHeaderHeight(60F)
+//            BezierRadarHeader(requireContext())
+//            .setEnableHorizontalDrag(true)
+//            .setPrimaryColorId(R.color.colorPrimary)
+            MaterialHeader(requireContext()).setShowBezierWave(true)
+        ).setHeaderHeight(60F).setPrimaryColorsId(R.color.colorPrimary)
 
         mViewBind.shareRefresh.setOnRefreshListener {
             mViewModel.getPost()
             postAdapter.notifyDataSetChanged()
-            it.finishRefresh(1000)
+            it.finishRefresh(800)
         }
     }
 
-    override fun dismissLoading() {
+    override fun dismissLoading() { }
 
-    }
-
-    override fun showLoading(message: String) {
-
-    }
+    override fun showLoading(message: String) { }
 
 }

@@ -67,4 +67,25 @@ interface ApiService {
     @POST("getPostList")
     suspend fun getPost() : ApiResponse1<ArrayList<PostData>>
 
+    // 点赞
+    @FormUrlEncoded
+    @POST("likeStar")
+    suspend fun likeStar(
+        @Field("post_id") postId: String
+    ) : ApiResponse1<Any>
+
+    // 获取自己发布的帖子
+    @POST("getSelfPosts")
+    suspend fun getSelfPosts() : ApiResponse1<ArrayList<PostData>>
+
+    // 删除自己的帖子
+    @FormUrlEncoded
+    @POST("removePost")
+    suspend fun removePost(
+        @Field("post_id") postId: String
+    ) : ApiResponse1<Any>
+
+    // 获取首页推荐
+    @POST("getRecommendList")
+    suspend fun getRecommendList() : ApiResponse1<ArrayList<ArticleResponse>>
 }

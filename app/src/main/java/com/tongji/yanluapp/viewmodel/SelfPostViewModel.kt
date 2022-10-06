@@ -9,18 +9,18 @@ import me.hgj.jetpackmvvm.state.ResultState
 
 /**
  * @author: Kana (Tongji)
- * @date: 2022/10/1 13:41
+ * @date: 2022/10/6 10:32
  * @description:
  * @email: tongji0x208@gmail.com
  */
-class ShareViewModel : BaseViewModel() {
+class SelfPostViewModel : BaseViewModel() {
 
-    var postResult = MutableLiveData<ResultState<ArrayList<PostData>>>()
+    var selfPostResult = MutableLiveData<ResultState<ArrayList<PostData>>>()
 
-    fun getPost() {
+    fun getSelfPost() {
         request(
-            { apiService1.getPost() } // 请求体
-            , postResult
+            { apiService1.getSelfPosts() } // 请求体
+            , selfPostResult
         )
     }
 

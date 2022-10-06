@@ -1,108 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="15dp"
     android:layout_marginTop="5dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_post_avatar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/portrait"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/circleImageStyle"/>
-
-    <TextView
-        android:id="@+id/tv_post_user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="挽弦慕笙"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:layout_toEndOf="@+id/iv_post_avatar"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/tv_post_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="a day ago"
-        android:textSize="15sp"
-        android:layout_below="@id/tv_post_user_name"
-        android:layout_toEndOf="@+id/iv_post_avatar"
-        android:textColor="@color/black"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="14dp"/>
-
-    <TextView
-        android:id="@+id/tv_post_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="今天数学复习的不错！"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_below="@id/iv_post_avatar"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="12dp"/>
-
-    <LinearLayout
-        android:id="@+id/root_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_post_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_post_like"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@mipmap/post_like"/>
-
-        <TextView
-            android:id="@+id/tv_like_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="15"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="25dp"/>
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_post_comment"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@mipmap/comment" />
-
-        <TextView
-            android:id="@+id/tv_comment_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="15"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="15dp"/>
-
-    </LinearLayout>
-
-    <View
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/root_like"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="#CCCACA"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
 
-</RelativeLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_post_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/portrait"
+            app:shapeAppearanceOverlay="@style/circleImageStyle" />
+
+        <TextView
+            android:id="@+id/tv_post_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/iv_post_avatar"
+            android:text="挽弦慕笙"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_post_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_post_user_name"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/iv_post_avatar"
+            android:text="a day ago"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_post_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_post_avatar"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="18dp"
+            android:text="今天数学复习的不错！"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/root_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_post_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_post_like"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/post_like" />
+
+            <TextView
+                android:id="@+id/tv_like_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:text="15"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_post_comment"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/comment" />
+
+            <TextView
+                android:id="@+id/tv_comment_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="15dp"
+                android:text="15"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

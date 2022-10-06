@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_article"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="15dp"
+    android:layout_marginTop="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/tv_article_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="考研杂谈一：计算机专业有必要考研吗？"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_article_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_article_title"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="有同学私信我说，今年考研人数又涨啦、好多高校改成408了，我还要考研吗？结果聊着聊着发现，他根本不必考研……  今天我们就来说说，如何判断自己是不是需要考研？结合本人的亲身经历及本科、研究生同学们的发展..."/>
+
+        <TextView
+            android:id="@+id/tv_article_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文章来自CSDN"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:layout_below="@+id/tv_article_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -19,7 +19,7 @@
             android:id="@+id/tv_sure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="您确定退出登录状态吗？"
+            android:text="您确定删除该动态吗？"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:layout_marginTop="35dp"

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/self_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/self_refresh"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@id/self_toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_self_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</RelativeLayout>

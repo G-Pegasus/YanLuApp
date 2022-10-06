@@ -1,6 +1,10 @@
 package com.tongji.yanluapp.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.app.utils.showToast
 import com.tongji.yanluapp.databinding.FragmentRecBinding
@@ -10,6 +14,9 @@ import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.bannerview.constants.PageStyle
 import com.zhpan.indicator.enums.IndicatorStyle
 import com.tongji.yanluapp.app.base.BaseFragment1
+import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
+import com.tongji.yanluapp.ui.adapter.ArticleAdapter
+import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
 
 /**
@@ -21,6 +28,7 @@ import me.hgj.jetpackmvvm.ext.parseState
 class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
 
     private lateinit var bannerViewPager: BannerViewPager<String>
+    private lateinit var articleAdapter: ArticleAdapter
 
     override fun initView(savedInstanceState: Bundle?) {
         mViewModel.getBannerImage()
@@ -37,6 +45,38 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
             }, {
                 requireContext().showToast(it.errorMsg)
             })
+        }
+
+        val rvArticle = mViewBind.rvRec
+        rvArticle.layoutManager = LinearLayoutManager(appContext)
+
+        mViewModel.getArticles()
+        mViewModel.articleResult.observe(viewLifecycleOwner) { resultState ->
+            parseState(resultState, {
+                articleAdapter = ArticleAdapter(requireContext(), it)
+                rvArticle.adapter = articleAdapter
+
+                articleAdapter.setOnItemClickListener(object : ArticleAdapter.OnItemClickListener {
+                    override fun onItemClick(view: View, position: Int) {
+                        val intent = Intent(context, SchoolInfoActivity::class.java)
+                        val bundle = Bundle()
+                        val articleWeb = it[position].recommend_url
+                        bundle.putString("data", articleWeb)
+                        intent.putExtras(bundle)
+                        startActivity(intent)
+                    }
+                })
+            })
+        }
+
+        mViewBind.recRefresh.setRefreshHeader(
+            MaterialHeader(requireContext()).setShowBezierWave(true)
+        ).setHeaderHeight(60F).setPrimaryColorsId(R.color.colorPrimary)
+
+        mViewBind.recRefresh.setOnRefreshListener {
+            mViewModel.getArticles()
+            articleAdapter.notifyDataSetChanged()
+            it.finishRefresh(800)
         }
 
     }

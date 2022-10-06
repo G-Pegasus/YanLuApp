@@ -1,5 +1,8 @@
 package com.tongji.yanluapp.ui.adapter
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.luck.picture.lib.entity.LocalMedia
 import com.tongji.yanluapp.R
+import com.tongji.yanluapp.ui.activity.PhotoShowActivity
 import me.hgj.jetpackmvvm.ext.view.invisible
 import me.hgj.jetpackmvvm.ext.view.visible
 
@@ -19,6 +23,7 @@ import me.hgj.jetpackmvvm.ext.view.visible
  */
 
 class ImageAdapter(
+    private val context: Context,
     private val maxSize: Int = 3
 ) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
@@ -65,6 +70,18 @@ class ImageAdapter(
 
             val media = mList[position]
             Glide.with(holder.itemView.context).load(media.realPath).into(holder.image)
+            holder.image.setOnClickListener {
+                val intent = Intent(context, PhotoShowActivity::class.java)
+                val bundle = Bundle()
+                val photoList = mList
+                val photoPathList = ArrayList<String>()
+                photoList.forEach {
+                    photoPathList.add(it.realPath)
+                }
+                bundle.putStringArrayList("data", photoPathList)
+                intent.putExtras(bundle)
+                context.startActivity(intent)
+            }
         }
     }
 

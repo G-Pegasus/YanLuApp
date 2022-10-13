@@ -8,6 +8,7 @@ import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
 import me.hgj.jetpackmvvm.state.ResultState
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
@@ -26,7 +27,7 @@ class MeViewModel : BaseViewModel() {
     // 上传单张图片
     fun uploadAvatar(file: File) {
         val builder = MultipartBody.Builder().setType(MultipartBody.FORM) // 表单类型
-        val requestFile: RequestBody = RequestBody.create(MediaType.parse("image/*"), file)
+        val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), file)
         builder.addFormDataPart("file", file.name, requestFile)
         val part = builder.build().part(0)
 

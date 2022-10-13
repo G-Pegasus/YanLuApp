@@ -5,6 +5,7 @@ import com.tongji.yanluapp.app.network.apiService1
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
@@ -26,7 +27,7 @@ class ReleaseViewModel : BaseViewModel() {
         for (i in files.indices) {
             val imageFile = File(files[i].realPath)
             val builder = MultipartBody.Builder().setType(MultipartBody.FORM) // 表单类型
-            requestFile = RequestBody.create(MediaType.parse("image/*"), imageFile)
+            requestFile = RequestBody.create("image/*".toMediaTypeOrNull(), imageFile)
             builder.addFormDataPart("file${i}", imageFile.name, requestFile)
             list.add(builder.build().part(0))
         }

@@ -13,16 +13,11 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
-import com.tencent.mmkv.MMKV
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
-import com.tongji.yanluapp.app.network.response.UserInfoResponse
-import com.tongji.yanluapp.app.utils.CacheUtil
-import com.tongji.yanluapp.app.utils.showToast
-import com.tongji.yanluapp.viewmodel.MeViewModel
+import com.tongji.lib_common.bean.UpdateInfoResponse
+import com.tongji.lib_common.utils.CacheUtil
+import com.tongji.yanluapp.utils.showToast
 import me.hgj.jetpackmvvm.base.appContext
-import me.hgj.jetpackmvvm.state.ResultState
 
 /**
  * @Author Tongji

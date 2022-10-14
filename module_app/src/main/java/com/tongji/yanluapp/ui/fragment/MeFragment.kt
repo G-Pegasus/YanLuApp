@@ -10,9 +10,9 @@ import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.scwang.smart.refresh.header.BezierRadarHeader
 import com.tencent.mmkv.MMKV
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.CacheUtil
-import com.tongji.yanluapp.app.utils.GlideEngine
-import com.tongji.yanluapp.app.utils.showToast
+import com.tongji.lib_common.utils.CacheUtil
+import com.tongji.yanluapp.utils.GlideEngine
+import com.tongji.yanluapp.utils.showToast
 import com.tongji.yanluapp.databinding.FragmentMeBinding
 import com.tongji.yanluapp.ui.activity.LikeActivity
 import com.tongji.yanluapp.ui.activity.LoginActivity
@@ -21,10 +21,9 @@ import com.tongji.yanluapp.ui.fragment.dialog.AboutAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel
-import com.tongji.yanluapp.app.base.BaseFragment1
+import com.tongji.lib_base.ui.BaseFragment1
 import com.tongji.yanluapp.ui.activity.SelfPostActivity
 import me.hgj.jetpackmvvm.ext.parseState
-import me.hgj.jetpackmvvm.ext.view.invisible
 import me.hgj.jetpackmvvm.util.startActivity
 import java.io.File
 

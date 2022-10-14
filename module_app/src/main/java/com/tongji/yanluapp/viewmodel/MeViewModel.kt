@@ -1,13 +1,12 @@
 package com.tongji.yanluapp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.tongji.yanluapp.app.network.apiService1
-import com.tongji.yanluapp.app.network.response.AvatarResponse
-import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
+import com.tongji.lib_common.network.apiService1
+import com.tongji.lib_common.bean.AvatarResponse
+import com.tongji.lib_common.bean.UpdateInfoResponse
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
 import me.hgj.jetpackmvvm.state.ResultState
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

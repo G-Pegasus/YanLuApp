@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.showToast
+import com.tongji.yanluapp.utils.showToast
 import com.tongji.yanluapp.ui.adapter.PhotoShowAdapter
 
 class PhotoShowActivity : AppCompatActivity() {

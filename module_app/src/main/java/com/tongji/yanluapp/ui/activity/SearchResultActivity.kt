@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.app.App.Companion.context
 import com.tongji.yanluapp.app.data.SchoolData.addList
-import com.tongji.yanluapp.app.utils.initClose
+import com.tongji.yanluapp.utils.initClose
 import com.tongji.yanluapp.bean.School
 import com.tongji.yanluapp.databinding.ActivitySearchResultBinding
 import com.tongji.yanluapp.ui.adapter.SchoolAdapter
 import com.tongji.yanluapp.viewmodel.SearchResultViewModel
 import me.hgj.jetpackmvvm.base.appContext
-import com.tongji.yanluapp.app.base.BaseActivity1
+import com.tongji.lib_base.ui.BaseActivity1
 
 class SearchResultActivity : BaseActivity1<SearchResultViewModel, ActivitySearchResultBinding>() {
 

@@ -1,6 +1,6 @@
 package com.tongji.yanluapp.viewmodel
 
-import com.tongji.yanluapp.app.network.apiService1
+import com.tongji.lib_common.network.apiService1
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
 

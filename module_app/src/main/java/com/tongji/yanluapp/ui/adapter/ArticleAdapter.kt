@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.network.response.ArticleResponse
+import com.tongji.lib_common.bean.ArticleResponse
 
 /**
  * @author: Kana (Tongji)

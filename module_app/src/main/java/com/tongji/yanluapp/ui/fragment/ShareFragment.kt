@@ -3,12 +3,11 @@ package com.tongji.yanluapp.ui.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.scwang.smart.refresh.header.BezierRadarHeader
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.databinding.FragmentShareBinding
 import com.tongji.yanluapp.viewmodel.ShareViewModel
-import com.tongji.yanluapp.app.base.BaseFragment1
+import com.tongji.lib_base.ui.BaseFragment1
 import com.tongji.yanluapp.ui.activity.ReleaseActivity
 import com.tongji.yanluapp.ui.adapter.PostAdapter
 import me.hgj.jetpackmvvm.base.appContext

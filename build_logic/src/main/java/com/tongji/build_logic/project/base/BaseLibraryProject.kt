@@ -39,6 +39,7 @@ abstract class BaseLibraryProject(project: Project) : BaseAndroidProject(project
     
       buildFeatures {
         dataBinding = true
+        viewBinding = true
       }
     }
   }

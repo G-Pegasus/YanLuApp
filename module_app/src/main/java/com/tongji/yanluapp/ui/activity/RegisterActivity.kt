@@ -1,14 +1,13 @@
 package com.tongji.yanluapp.ui.activity
 
 import android.os.Bundle
-import com.tongji.yanluapp.app.utils.CacheUtil
-import com.tongji.yanluapp.app.utils.showToast
+import com.tongji.lib_common.utils.CacheUtil
+import com.tongji.yanluapp.utils.showToast
 import com.tongji.yanluapp.databinding.ActivityRegisterBinding
 import com.tongji.yanluapp.viewmodel.LoginViewModel
-import com.tongji.yanluapp.app.base.BaseActivity1
-import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
+import com.tongji.lib_base.ui.BaseActivity1
+import com.tongji.lib_common.bean.UpdateInfoResponse
 import me.hgj.jetpackmvvm.ext.parseState
-import me.hgj.jetpackmvvm.util.startActivity
 
 class RegisterActivity : BaseActivity1<LoginViewModel, ActivityRegisterBinding>() {
 

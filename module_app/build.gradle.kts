@@ -11,11 +11,9 @@ dependNetwork()
 dependSmartRefreshLayout()
 dependPhotoView()
 dependMMKV()
+dependMVVM()
 
 dependencies {
-
-    // MVVM基本框架
-    implementation("com.github.hegaojian:JetpackMvvm:1.2.7")
 
     // PictureSelector 图片上传
     implementation("io.github.lucksiege:pictureselector:v3.10.6")

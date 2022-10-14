@@ -10,7 +10,7 @@ import android.os.Bundle
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.showToast
+import com.tongji.yanluapp.utils.showToast
 import java.net.URISyntaxException
 
 

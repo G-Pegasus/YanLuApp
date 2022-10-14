@@ -5,8 +5,8 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.base.BaseActivity1
-import com.tongji.yanluapp.app.utils.initClose
+import com.tongji.lib_base.ui.BaseActivity1
+import com.tongji.yanluapp.utils.initClose
 import com.tongji.yanluapp.databinding.ActivitySelfPostBinding
 import com.tongji.yanluapp.ui.adapter.SelfPostAdapter
 import com.tongji.yanluapp.viewmodel.SelfPostViewModel

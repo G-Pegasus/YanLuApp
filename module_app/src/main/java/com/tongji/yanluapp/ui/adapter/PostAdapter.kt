@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.network.response.PostData
+import com.tongji.lib_common.bean.PostData
 import me.hgj.jetpackmvvm.base.appContext
 
 /**

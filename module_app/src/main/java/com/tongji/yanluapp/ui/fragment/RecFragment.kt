@@ -8,20 +8,19 @@ import android.view.animation.LayoutAnimationController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.showToast
+import com.tongji.yanluapp.utils.showToast
 import com.tongji.yanluapp.databinding.FragmentRecBinding
 import com.tongji.yanluapp.ui.adapter.BannerAdapter
 import com.tongji.yanluapp.viewmodel.RecViewModel
 import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.bannerview.constants.PageStyle
 import com.zhpan.indicator.enums.IndicatorStyle
-import com.tongji.yanluapp.app.base.BaseFragment1
-import com.tongji.yanluapp.app.utils.CacheUtil
+import com.tongji.lib_base.ui.BaseFragment1
+import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.ui.activity.SchoolInfoActivity
 import com.tongji.yanluapp.ui.adapter.ArticleAdapter
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
-import java.util.*
 
 /**
  * @author: Kana (Tongji)

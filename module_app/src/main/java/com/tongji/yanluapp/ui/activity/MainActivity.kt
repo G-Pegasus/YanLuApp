@@ -2,11 +2,11 @@ package com.tongji.yanluapp.ui.activity
 
 import android.os.Bundle
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.utils.init
-import com.tongji.yanluapp.app.utils.initMain
+import com.tongji.yanluapp.utils.init
+import com.tongji.yanluapp.utils.initMain
 import com.tongji.yanluapp.databinding.ActivityMainBinding
 import com.tongji.yanluapp.viewmodel.MainViewModel
-import com.tongji.yanluapp.app.base.BaseActivity1
+import com.tongji.lib_base.ui.BaseActivity1
 
 class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
 

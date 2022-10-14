@@ -10,10 +10,10 @@ import com.luck.picture.lib.config.SelectModeConfig.MULTIPLE
 import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.base.BaseActivity1
-import com.tongji.yanluapp.app.utils.GlideEngine
-import com.tongji.yanluapp.app.utils.initClose
-import com.tongji.yanluapp.app.utils.showToast
+import com.tongji.lib_base.ui.BaseActivity1
+import com.tongji.yanluapp.utils.GlideEngine
+import com.tongji.yanluapp.utils.initClose
+import com.tongji.yanluapp.utils.showToast
 import com.tongji.yanluapp.databinding.ActivityReleaseBinding
 import com.tongji.yanluapp.ui.adapter.ImageAdapter
 import com.tongji.yanluapp.viewmodel.ReleaseViewModel

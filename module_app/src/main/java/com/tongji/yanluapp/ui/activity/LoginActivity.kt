@@ -3,14 +3,13 @@ package com.tongji.yanluapp.ui.activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.tongji.yanluapp.app.network.response.UpdateInfoResponse
-import com.tongji.yanluapp.app.utils.CacheUtil
+import com.tongji.lib_common.bean.UpdateInfoResponse
+import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.databinding.ActivityLoginBinding
 import com.tongji.yanluapp.viewmodel.LoginViewModel
 import me.hgj.jetpackmvvm.base.appContext
-import com.tongji.yanluapp.app.base.BaseActivity1
+import com.tongji.lib_base.ui.BaseActivity1
 import me.hgj.jetpackmvvm.ext.parseState
-import me.hgj.jetpackmvvm.util.startActivity
 
 class LoginActivity : BaseActivity1<LoginViewModel, ActivityLoginBinding>() {
 

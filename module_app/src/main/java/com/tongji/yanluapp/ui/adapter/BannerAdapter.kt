@@ -3,7 +3,6 @@ package com.tongji.yanluapp.ui.adapter
 import android.content.Context
 import com.bumptech.glide.Glide
 import com.tongji.yanluapp.R
-import com.tongji.yanluapp.app.network.response.BannerImageResponse
 import com.zhpan.bannerview.BaseBannerAdapter
 import com.zhpan.bannerview.BaseViewHolder
 

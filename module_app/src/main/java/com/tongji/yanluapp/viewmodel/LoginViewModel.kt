@@ -1,9 +1,8 @@
 package com.tongji.yanluapp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.tongji.yanluapp.app.network.HttpRequestCoroutine
-import com.tongji.yanluapp.app.network.apiService1
-import com.tongji.yanluapp.app.network.response.UserInfoResponse
+import com.tongji.lib_common.network.apiService1
+import com.tongji.lib_common.bean.UserInfoResponse
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
 import me.hgj.jetpackmvvm.state.ResultState

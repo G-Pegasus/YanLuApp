@@ -3,10 +3,10 @@ package com.tongji.yanluapp.ui.fragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
-import com.tongji.yanluapp.app.utils.init
+import com.tongji.yanluapp.utils.init
 import com.tongji.yanluapp.databinding.FragmentHomeBinding
 import com.tongji.yanluapp.viewmodel.HomeViewModel
-import com.tongji.yanluapp.app.base.BaseFragment1
+import com.tongji.lib_base.ui.BaseFragment1
 
 /**
  * @author: Kana (Tongji)

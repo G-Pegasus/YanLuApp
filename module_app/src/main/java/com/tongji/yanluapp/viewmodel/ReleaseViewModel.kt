@@ -1,10 +1,9 @@
 package com.tongji.yanluapp.viewmodel
 
 import com.luck.picture.lib.entity.LocalMedia
-import com.tongji.yanluapp.app.network.apiService1
+import com.tongji.lib_common.network.apiService1
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

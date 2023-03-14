@@ -19,7 +19,7 @@ interface ApiService {
     }
 
     @GET("HPImageArchive.aspx?format=js&idx=0&n=1")
-    suspend fun getSplashImage() : ApiResponse<ArrayList<ImageResponse>>
+    suspend fun getSplashImage(): ApiResponse<ArrayList<ImageResponse>>
 
     @FormUrlEncoded
     @POST("login")
@@ -49,11 +49,11 @@ interface ApiService {
     suspend fun updateInfo(
         @Field("user_name") userName: String,
         @Field("user_sign") userSign: String
-    ) : ApiResponse1<Any>
+    ): ApiResponse1<Any>
 
     // 获取首页轮播图
     @POST("getSlideShowImage")
-    suspend fun getBannerImage() : ApiResponse1<BannerImageResponse>
+    suspend fun getBannerImage(): ApiResponse1<BannerImageResponse>
 
     // 发布帖子
     @Multipart
@@ -61,31 +61,59 @@ interface ApiService {
     suspend fun releasePost(
         @Part("post_content") content: String,
         @Part images: List<MultipartBody.Part>
-    ) : ApiResponse1<Any>
+    ): ApiResponse1<Any>
 
     // 获取帖子
     @POST("getPostList")
-    suspend fun getPost() : ApiResponse1<ArrayList<PostData>>
+    suspend fun getPost(): ApiResponse1<ArrayList<PostData>>
 
     // 点赞
     @FormUrlEncoded
     @POST("likeStar")
     suspend fun likeStar(
         @Field("post_id") postId: String
-    ) : ApiResponse1<Any>
+    ): ApiResponse1<Any>
 
     // 获取自己发布的帖子
     @POST("getSelfPosts")
-    suspend fun getSelfPosts() : ApiResponse1<ArrayList<PostData>>
+    suspend fun getSelfPosts(): ApiResponse1<ArrayList<PostData>>
 
     // 删除自己的帖子
     @FormUrlEncoded
     @POST("removePost")
     suspend fun removePost(
         @Field("post_id") postId: String
-    ) : ApiResponse1<Any>
+    ): ApiResponse1<Any>
 
     // 获取首页推荐
     @POST("getRecommendList")
-    suspend fun getRecommendList() : ApiResponse1<ArrayList<ArticleResponse>>
+    suspend fun getRecommendList(): ApiResponse1<ArrayList<ArticleResponse>>
+
+    //获取当日的TOD
+    @GET("todo/getTodo")
+    suspend fun getTodoByTime(@Query("time")time: String): ApiResponse2<List<TodoResponse>>
+
+    //添加TODO
+    @FormUrlEncoded
+    @POST("todo/add")
+    suspend fun addTodo(
+        @Field("title") title: String,
+        @Field("time") time: String,
+        @Field("detail") detail: String
+    ): ApiResponse2<TodoResponse>
+
+    //更新TODO
+    @FormUrlEncoded
+    @PUT("todo/update")
+    suspend fun updateTodo(
+        @Field("todo_id") id: String,
+        @Field("title") title: String,
+        @Field("detail") detail: String,
+        @Field("time") time: String
+    ): ApiResponse2<TodoResponse>
+
+    //删除TODO
+    @DELETE("todo/delete")
+    suspend fun deleteTodo(@Query("todo_id") id: String): ApiResponse2<TodoResponse>
+
 }

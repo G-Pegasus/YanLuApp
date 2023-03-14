@@ -12,6 +12,7 @@ import com.tongji.yanluapp.R
 import com.tongji.yanluapp.ui.fragment.HomeFragment
 import com.tongji.yanluapp.ui.fragment.InfoFragment
 import com.tongji.yanluapp.ui.fragment.MeFragment
+import com.tongji.yanluapp.ui.fragment.SubjectFragment
 import me.hgj.jetpackmvvm.ext.util.toHtml
 
 /**
@@ -34,7 +35,7 @@ fun ViewPager2.initMain(activity: AppCompatActivity): ViewPager2 {
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 -> HomeFragment()
-                // 1 -> SubjectFragment()
+                 3 -> SubjectFragment()
                 1 -> InfoFragment()
                 2 -> MeFragment()
                 else -> HomeFragment()

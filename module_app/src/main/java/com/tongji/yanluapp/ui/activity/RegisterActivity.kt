@@ -1,5 +1,6 @@
 package com.tongji.yanluapp.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.utils.showToast
@@ -32,7 +33,7 @@ class RegisterActivity : BaseActivity1<LoginViewModel, ActivityRegisterBinding>(
 
         mViewModel.loginResult.observe(this@RegisterActivity) { resultState ->
             parseState(resultState, {
-                startActivity<MainActivity>()
+                startActivity(Intent(this,MainActivity::class.java))
                 CacheUtil.setIsLogin(true)
                 CacheUtil.setUser(it)
                 if (it.user_name != "" && it.user_sign != "") {

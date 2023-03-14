@@ -23,4 +23,7 @@ dependencies {
     // Banner
     implementation("com.github.zhpanvip:bannerviewpager:3.5.7")
 
+    implementation("com.haibin:calendarview:3.7.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+
 }

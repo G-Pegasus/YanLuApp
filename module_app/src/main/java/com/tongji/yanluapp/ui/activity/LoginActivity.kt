@@ -29,7 +29,7 @@ class LoginActivity : BaseActivity1<LoginViewModel, ActivityLoginBinding>() {
         }
 
         mViewBind.toRegister.setOnClickListener {
-            startActivity<RegisterActivity>()
+            startActivity(Intent(this,RegisterActivity::class.java))
         }
 
         mViewModel.loginResult.observe(this@LoginActivity) { resultState ->

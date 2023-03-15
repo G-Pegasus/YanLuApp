@@ -80,6 +80,7 @@ class TodoDialog : DialogFragment() {
                     timeEt.text.toString()
                 )
             }
+            dismiss()
         }
         timeEt.setOnClickListener {
             openCalender(view.context, timeEt)

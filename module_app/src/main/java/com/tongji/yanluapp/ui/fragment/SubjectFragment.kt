@@ -120,7 +120,7 @@ class SubjectFragment : BaseFragment1<SubjectViewModel, FragmentSubjectBinding>(
         mRecyclerView.adapter = todoAdapter
 
         mViewModel.todoLiveData.observe(viewLifecycleOwner) {
-            if (!it!!.isEmpty()) {
+            if (it!!.isNotEmpty()) {
                 mNoneTv.visibility=View.GONE
             }else mNoneTv.visibility=View.VISIBLE
             todoAdapter.submitList(it)

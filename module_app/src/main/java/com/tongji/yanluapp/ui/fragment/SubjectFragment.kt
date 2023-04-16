@@ -115,6 +115,8 @@ class SubjectFragment : BaseFragment1<SubjectViewModel, FragmentSubjectBinding>(
         mTextLunar.text = "今日"
         mTextCurrentDay.text = mCalendarView.curDay.toString()
 
+        mTime = mYear.toString() + "." + mCalendarView.curMonth.toString() + "." + mCalendarView.curDay
+
         mRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         val todoAdapter = TodoAdapter()
         mRecyclerView.adapter = todoAdapter

@@ -5,12 +5,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.tongji.lib_common.bean.TodoResponse
+import com.tongji.lib_common.network.ApiResponse2
 import com.tongji.lib_common.network.apiService1
 import com.tongji.yanluapp.app.App
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
+import retrofit2.HttpException
 
 /**
  * @author: Kana (Tongji)
@@ -29,11 +31,18 @@ class SubjectViewModel : BaseViewModel() {
 
     fun getTodoByTime(time: String) {
         viewModelScope.launch {
-            val data = apiService1.getTodoByTime(time)
-            if (data.code != 200 || data.msg != "获取成功") {
-                _errorLiveData.postValue(true)
-            } else {
-                _todoLiveData.postValue(data.data)
+            val data: ApiResponse2<List<TodoResponse>>
+            try {
+                data = apiService1.getTodoByTime(time)
+                if (data.code != 200 || data.msg != "获取成功") {
+                    _errorLiveData.postValue(true)
+                } else {
+                    _todoLiveData.postValue(data.data)
+                }
+            }catch (e:HttpException){
+                if (e.message()=="Unauthorized"){
+                    Toast.makeText(App.context, "请先登录！", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -44,12 +53,17 @@ class SubjectViewModel : BaseViewModel() {
         detail: String
     ) {
         viewModelScope.launch {
-            val data = apiService1.addTodo(title, time, detail)
-            Toast.makeText(App.context, data.msg, Toast.LENGTH_SHORT).show()
-            if (data.code != 200 || data.msg != "新增成功") {
-                _errorLiveData.postValue(true)
-            } else {
-                _errorLiveData.postValue(false)
+            try {
+                val data = apiService1.addTodo(title, time, detail)
+                if (data.code != 200 || data.msg != "新增成功") {
+                    _errorLiveData.postValue(true)
+                } else {
+                    _errorLiveData.postValue(false)
+                }
+            }catch (e:HttpException){
+                if (e.message()=="Unauthorized"){
+                    Toast.makeText(App.context, "请先登录！", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -61,22 +75,34 @@ class SubjectViewModel : BaseViewModel() {
         time: String
     ) {
         viewModelScope.launch {
-            val data = apiService1.updateTodo(id, title, detail, time)
-            if (data.code != 200 || data.msg != "更改成功") {
-                _errorLiveData.postValue(true)
-            } else {
-                _errorLiveData.postValue(false)
+            try {
+                val data = apiService1.updateTodo(id, title, detail, time)
+                if (data.code != 200 || data.msg != "更改成功") {
+                    _errorLiveData.postValue(true)
+                } else {
+                    _errorLiveData.postValue(false)
+                }
+            }catch (e:HttpException){
+                if (e.message()=="Unauthorized"){
+                    Toast.makeText(App.context, "请先登录！", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
 
     fun deleteTodo(id: String) {
         viewModelScope.launch {
-            val data = apiService1.deleteTodo(id)
-            if (data.code != 200 || data.msg != "删除成功") {
-                _errorLiveData.postValue(true)
-            } else {
-                _errorLiveData.postValue(false)
+            try {
+                val data = apiService1.deleteTodo(id)
+                if (data.code != 200 || data.msg != "删除成功") {
+                    _errorLiveData.postValue(true)
+                } else {
+                    _errorLiveData.postValue(false)
+                }
+            }catch (e: HttpException){
+                if (e.message()=="Unauthorized"){
+                    Toast.makeText(App.context, "请先登录！", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

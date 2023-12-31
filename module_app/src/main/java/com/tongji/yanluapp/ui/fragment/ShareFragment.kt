@@ -2,6 +2,7 @@ package com.tongji.yanluapp.ui.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
@@ -10,6 +11,7 @@ import com.tongji.yanluapp.viewmodel.ShareViewModel
 import com.tongji.lib_base.ui.BaseFragment1
 import com.tongji.yanluapp.ui.activity.ReleaseActivity
 import com.tongji.yanluapp.ui.adapter.PostAdapter
+import kotlinx.coroutines.delay
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
@@ -33,6 +35,7 @@ class ShareFragment : BaseFragment1<ShareViewModel, FragmentShareBinding>() {
         rvPost.layoutManager = LinearLayoutManager(appContext)
 
         mViewModel.getPost()
+        rvPost.itemAnimator?.changeDuration = 0
         mViewModel.postResult.observe(viewLifecycleOwner) { resultState ->
             parseState(resultState, {
                 postAdapter = PostAdapter(requireContext(), it)
@@ -41,7 +44,6 @@ class ShareFragment : BaseFragment1<ShareViewModel, FragmentShareBinding>() {
                 postAdapter.setOnItemClickListener(object : PostAdapter.OnItemClickListener {
                     override fun onItemClick(view: View, position: Int) {
                         mViewModel.postLike(it[position].post_id)
-                        mViewBind.shareRefresh.autoRefresh()
                     }
 
                     override fun onItemLongClick(view: View, position: Int) {}

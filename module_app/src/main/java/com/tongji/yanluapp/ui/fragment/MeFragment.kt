@@ -22,6 +22,7 @@ import com.tongji.yanluapp.ui.fragment.dialog.RewardAuthor
 import com.tongji.yanluapp.ui.fragment.dialog.SetUserInfo
 import com.tongji.yanluapp.viewmodel.MeViewModel
 import com.tongji.lib_base.ui.BaseFragment1
+import com.tongji.lib_common.network.NetworkApi
 import com.tongji.yanluapp.ui.activity.SelfPostActivity
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
@@ -131,7 +132,9 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
                 startActivity<LoginActivity>()
             } else {
                 // EditLogin().show(childFragmentManager, "EditLogin")
-                CacheUtil.setIsLogin(false)
+                // CacheUtil.setIsLogin(false)
+                NetworkApi.INSTANCE.cookieJar.clear()
+                CacheUtil.setUser(null)
                 mViewBind.refreshLayout.autoRefresh()
                 mViewBind.tvLogin.text = "登录 / 注册"
             }

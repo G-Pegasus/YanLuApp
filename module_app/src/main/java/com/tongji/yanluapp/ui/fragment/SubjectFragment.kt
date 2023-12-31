@@ -1,14 +1,12 @@
 package com.tongji.yanluapp.ui.fragment
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.haibin.calendarview.Calendar
@@ -21,9 +19,6 @@ import com.tongji.yanluapp.databinding.FragmentSubjectBinding
 import com.tongji.yanluapp.ui.adapter.TodoAdapter
 import com.tongji.yanluapp.ui.fragment.dialog.TodoDialog
 import com.tongji.yanluapp.viewmodel.SubjectViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * @author: Kana (Tongji)
@@ -120,7 +115,7 @@ class SubjectFragment : BaseFragment1<SubjectViewModel, FragmentSubjectBinding>(
         mRecyclerView.adapter = todoAdapter
 
         mViewModel.todoLiveData.observe(viewLifecycleOwner) {
-            if (!it!!.isEmpty()) {
+            if (it!!.isNotEmpty()) {
                 mNoneTv.visibility=View.GONE
             }else mNoneTv.visibility=View.VISIBLE
             todoAdapter.submitList(it)

@@ -52,13 +52,18 @@
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/activity_main.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/fragment_home.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/fragment_me.xml" value="0.3" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/fragment_rec.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/fragment_share.xml" value="0.3" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/fragment_subject.xml" value="0.286231884057971" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/item_image.xml" value="0.3" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/item_post.xml" value="0.3" />
+        <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/layout/item_post_image.xml" value="0.3" />
         <entry key="..\:/Users/13394/AndroidStudioProjects/YanLuApp/module_app/src/main/res/menu/menu_navigation_fix.xml" value="0.3" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

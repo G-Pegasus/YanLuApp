@@ -89,7 +89,7 @@ interface ApiService {
     @POST("getRecommendList")
     suspend fun getRecommendList(): ApiResponse1<ArrayList<ArticleResponse>>
 
-    //获取当日的TOD
+    //获取当日的TODO
     @GET("todo/getTodo")
     suspend fun getTodoByTime(@Query("time")time: String): ApiResponse2<List<TodoResponse>>
 

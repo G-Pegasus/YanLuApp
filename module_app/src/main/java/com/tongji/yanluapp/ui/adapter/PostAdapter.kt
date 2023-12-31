@@ -1,14 +1,17 @@
 package com.tongji.yanluapp.ui.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
+import com.luck.picture.lib.utils.ToastUtils
 import com.tongji.yanluapp.R
 import com.tongji.lib_common.bean.PostData
 import me.hgj.jetpackmvvm.base.appContext
@@ -71,6 +74,7 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
             TYPE_CONTENT -> {
@@ -89,7 +93,27 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 }
 
                 contentHolder.ivPostLike.setOnClickListener {
+                    val oldList = postList
                     onItemClickListener.onItemClick(contentHolder.itemView, position)
+
+                    // 手动设置点赞与否，并进行差分刷新
+                    postList[position].is_like = !postList[position].is_like
+                    if (postList[position].is_like) {
+                        postList[position].post_likes++
+                    } else {
+                        postList[position].post_likes--
+                    }
+
+                    val diffResult = DiffUtil.calculateDiff(MyDiffCallback(oldList, postList))
+                    diffResult.dispatchUpdatesTo(this)
+
+                    // 重新设置图标和点赞数量
+                    contentHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
+                    if (postList[position].is_like) {
+                        contentHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
+                    } else {
+                        contentHolder.ivPostLike.setImageResource(R.mipmap.post_like)
+                    }
                 }
             }
 
@@ -109,7 +133,27 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 }
 
                 imageHolder.ivPostLike.setOnClickListener {
+                    val oldList = postList
                     onItemClickListener.onItemClick(imageHolder.itemView, position)
+
+                    // 手动设置点赞与否，并进行差分刷新
+                    postList[position].is_like = !postList[position].is_like
+                    if (postList[position].is_like) {
+                        postList[position].post_likes++
+                    } else {
+                        postList[position].post_likes--
+                    }
+
+                    val diffResult = DiffUtil.calculateDiff(MyDiffCallback(oldList, postList))
+                    diffResult.dispatchUpdatesTo(this)
+
+                    // 重新设置图标和点赞数量
+                    imageHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
+                    if (postList[position].is_like) {
+                        imageHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
+                    } else {
+                        imageHolder.ivPostLike.setImageResource(R.mipmap.post_like)
+                    }
                 }
 
                 val rvImage = imageHolder.rvPostImage
@@ -120,6 +164,23 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 rvImage.adapter = imageAdapter
             }
         }
+    }
+
+    // 列表数据的差分刷新
+    class MyDiffCallback(private val oldList: ArrayList<PostData>, private val newList: ArrayList<PostData>)
+        : DiffUtil.Callback() {
+        override fun getOldListSize(): Int = oldList.size
+
+        override fun getNewListSize(): Int = newList.size
+
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList[oldItemPosition] == newList[newItemPosition]
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList[oldItemPosition].is_like == newList[newItemPosition].is_like
+        }
+
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {

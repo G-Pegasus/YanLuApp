@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.2.1" type="baseline" client="gradle" dependencies="false" name="AGP (7.2.1)" variant="fatal" version="7.2.1">
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`about_author`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appAbout_author`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/about_author.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_like`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_like`&apos; ?"
+        errorLine1="&lt;RelativeLayout"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_like.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_login`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_login`&apos; ?"
+        errorLine1="&lt;LinearLayout"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_login.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_main`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_main`&apos; ?"
+        errorLine1="&lt;androidx.constraintlayout.widget.ConstraintLayout"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_photo_show`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_photo_show`&apos; ?"
+        errorLine1="&lt;RelativeLayout"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_photo_show.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_register`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_register`&apos; ?"
+        errorLine1="&lt;LinearLayout"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_register.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_release`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_release`&apos; ?"
+        errorLine1="&lt;LinearLayout"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_release.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_school_info`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_school_info`&apos; ?"
+        errorLine1="&lt;LinearLayout"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_school_info.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_search_result`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_search_result`&apos; ?"
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_search_result.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_self_post`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_self_post`&apos; ?"
+        errorLine1="&lt;RelativeLayout"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_self_post.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`activity_splash`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appActivity_splash`&apos; ?"
+        errorLine1="&lt;RelativeLayout"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_splash.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`add`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appAdd`&apos; ?">
+        <location
+            file="src/main/res/drawable/add.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`anim_pop_in`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appAnim_pop_in`&apos; ?"
+        errorLine1="&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2=" ~~~">
+        <location
+            file="src/main/res/anim/anim_pop_in.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`anim_pop_out`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appAnim_pop_out`&apos; ?"
+        errorLine1="&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2=" ~~~">
+        <location
+            file="src/main/res/anim/anim_pop_out.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`animation`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appAnimation`&apos; ?"
+        errorLine1="&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~">
+        <location
+            file="src/main/res/anim/animation.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`backup_rules`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBackup_rules`&apos; ?"
+        errorLine1="&lt;full-backup-content>"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/xml/backup_rules.xml"
+            line="8"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`bizhi`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBizhi`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/bizhi.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`btn_normal`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBtn_normal`&apos; ?"
+        errorLine1="&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~">
+        <location
+            file="src/main/res/drawable/btn_normal.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`btn_pressed`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBtn_pressed`&apos; ?"
+        errorLine1="&lt;shape"
+        errorLine2=" ~~~~~">
+        <location
+            file="src/main/res/drawable/btn_pressed.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`btn_selector`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBtn_selector`&apos; ?"
+        errorLine1="&lt;selector"
+        errorLine2=" ~~~~~~~~">
+        <location
+            file="src/main/res/drawable/btn_selector.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`colorPrimary`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appColorPrimary`&apos; ?"
+        errorLine1="    &lt;color name=&quot;colorPrimary&quot;>#158bb8&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`colorPrimaryDark`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appColorPrimaryDark`&apos; ?"
+        errorLine1="    &lt;color name=&quot;colorPrimaryDark&quot;>#158bb8&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`colorAccent`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appColorAccent`&apos; ?"
+        errorLine1="    &lt;color name=&quot;colorAccent&quot;>#158bb8&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`textHint`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appTextHint`&apos; ?"
+        errorLine1="    &lt;color name=&quot;textHint&quot;>#999999&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`white`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appWhite`&apos; ?"
+        errorLine1="    &lt;color name=&quot;white&quot;>#FFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`black`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBlack`&apos; ?"
+        errorLine1="    &lt;color name=&quot;black&quot;>#000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`colorGray`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appColorGray`&apos; ?"
+        errorLine1="    &lt;color name=&quot;colorGray&quot;>#333&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`colorBlack666`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appColorBlack666`&apos; ?"
+        errorLine1="    &lt;color name=&quot;colorBlack666&quot;>#666&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`colorBlack333`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appColorBlack333`&apos; ?"
+        errorLine1="    &lt;color name=&quot;colorBlack333&quot;>#333&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="11"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`windowBackground`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appWindowBackground`&apos; ?"
+        errorLine1="    &lt;color name=&quot;windowBackground&quot;>#F5F5F5&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="12"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`background`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBackground`&apos; ?"
+        errorLine1="    &lt;color name=&quot;background&quot;>#158bb8&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="13"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`backgroundeee`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBackgroundeee`&apos; ?"
+        errorLine1="    &lt;color name=&quot;backgroundeee&quot;>#158bb8&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="14"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`backgrounGrey`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appBackgrounGrey`&apos; ?"
+        errorLine1="    &lt;color name=&quot;backgrounGrey&quot;>#158bb8&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="15"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`texttipColor`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appTexttipColor`&apos; ?"
+        errorLine1="    &lt;color name=&quot;texttipColor&quot;>#a0a0a0&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="16"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`diverColoe`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDiverColoe`&apos; ?"
+        errorLine1="    &lt;color name=&quot;diverColoe&quot;>#cecece&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="17"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`accent`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appAccent`&apos; ?"
+        errorLine1="    &lt;color name=&quot;accent&quot;>#E91E63&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="18"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`chinaHoliDay`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appChinaHoliDay`&apos; ?"
+        errorLine1="    &lt;color name=&quot;chinaHoliDay&quot;>#e10015&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="19"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`comment`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appComment`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/comment.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`cqupt`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appCqupt`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/cqupt.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`data_extraction_rules`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appData_extraction_rules`&apos; ?"
+        errorLine1="&lt;data-extraction-rules>"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/xml/data_extraction_rules.xml"
+            line="6"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`delete`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDelete`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/delete.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`delete_post`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDelete_post`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/delete_post.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`dialog_author`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDialog_author`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/dialog_author.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`dialog_delete_post`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDialog_delete_post`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/dialog_delete_post.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`dialog_money`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDialog_money`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/dialog_money.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`dialog_setting`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appDialog_setting`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/dialog_setting.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`edittext_style`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appEdittext_style`&apos; ?"
+        errorLine1="&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~">
+        <location
+            file="src/main/res/drawable/edittext_style.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`fragment_home`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appFragment_home`&apos; ?"
+        errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_home.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`fragment_info`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appFragment_info`&apos; ?"
+        errorLine1="&lt;LinearLayout"
+        errorLine2=" ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_info.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`fragment_rec`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appFragment_rec`&apos; ?"
+        errorLine1="&lt;com.scwang.smart.refresh.layout.SmartRefreshLayout"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_rec.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`fragment_share`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appFragment_share`&apos; ?"
+        errorLine1="&lt;androidx.coordinatorlayout.widget.CoordinatorLayout"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_share.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`home`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appHome`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/home.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`home2`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appHome2`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/home2.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_back`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_back`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_back.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher`&apos; ?">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher`&apos; ?">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher`&apos; ?"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2=" ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_background`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_background`&apos; ?"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~">
+        <location
+            file="src/main/res/drawable/ic_launcher_background.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_foreground`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_foreground`&apos; ?"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~">
+        <location
+            file="src/main/res/drawable-v24/ic_launcher_foreground.xml"
+            line="1"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_round`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_round`&apos; ?">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_round`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_round`&apos; ?">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_round`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_round`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_round`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_round`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_round`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_round`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_launcher_round`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_launcher_round`&apos; ?"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2=" ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ic_search`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appIc_search`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_search.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`image`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appImage`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/image.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`include_toolbar`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appInclude_toolbar`&apos; ?"
+        errorLine1="&lt;androidx.appcompat.widget.Toolbar"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/include_toolbar.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`info`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appInfo`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/info.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`info2`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appInfo2`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/info2.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_banner`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_banner`&apos; ?"
+        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_banner.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_image`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_image`&apos; ?"
+        errorLine1="&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_image.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_image_post`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_image_post`&apos; ?"
+        errorLine1="&lt;RelativeLayout"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_image_post.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_imgselector`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_imgselector`&apos; ?"
+        errorLine1="&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2=" ~~~~~~~~">
+        <location
+            file="src/main/res/drawable/item_imgselector.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_post`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_post`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_post.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_post_image`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_post_image`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_post_image.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_rec`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_rec`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_rec.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_school`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_school`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_school.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_self_post`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_self_post`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_self_post.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`item_self_post_image`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appItem_self_post_image`&apos; ?"
+        errorLine1="&lt;androidx.cardview.widget.CardView"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_self_post_image.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`layout_photo`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appLayout_photo`&apos; ?"
+        errorLine1="&lt;RelativeLayout"
+        errorLine2=" ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/layout_photo.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`like`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appLike`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/like.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`login`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appLogin`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/login.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`menu_navigation_fix`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appMenu_navigation_fix`&apos; ?"
+        errorLine1="&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2=" ~~~~">
+        <location
+            file="src/main/res/menu/menu_navigation_fix.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`menu_search`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appMenu_search`&apos; ?"
+        errorLine1="&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~">
+        <location
+            file="src/main/res/menu/menu_search.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`mine`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appMine`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/mine.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`mine2`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appMine2`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/mine2.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`money`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appMoney`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/money.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`navigation`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appNavigation`&apos; ?"
+        errorLine1="&lt;navigation xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~~~~~~">
+        <location
+            file="src/main/res/navigation/navigation.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`network_security_config`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appNetwork_security_config`&apos; ?"
+        errorLine1="&lt;network-security-config>"
+        errorLine2=" ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/xml/network_security_config.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`point`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appPoint`&apos; ?">
+        <location
+            file="src/main/res/drawable/point.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`portrait`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appPortrait`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/portrait.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`post_like`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appPost_like`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/post_like.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`post_liked`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appPost_liked`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/post_liked.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`release`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appRelease`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/release.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`release_image`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appRelease_image`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/release_image.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`setting`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appSetting`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/setting.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`shape_edit_style`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appShape_edit_style`&apos; ?"
+        errorLine1="&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2=" ~~~~~">
+        <location
+            file="src/main/res/drawable/shape_edit_style.xml"
+            line="2"
+            column="2"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`home`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appHome`&apos; ?"
+        errorLine1="    &lt;string name=&quot;home&quot;>首页&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="3"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`info`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appInfo`&apos; ?"
+        errorLine1="    &lt;string name=&quot;info&quot;>院校信息&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="4"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`subject`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appSubject`&apos; ?"
+        errorLine1="    &lt;string name=&quot;subject&quot;>日历&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`mine`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appMine`&apos; ?"
+        errorLine1="    &lt;string name=&quot;mine&quot;>我的&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="6"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`todo`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appTodo`&apos; ?"
+        errorLine1="    &lt;string name=&quot;todo&quot;>TODO&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`subject`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appSubject`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/subject.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`subject2`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appSubject2`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/subject2.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`Theme.YanLuApp`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`AppTheme.YanLuApp`&apos; ?"
+        errorLine1="    &lt;style name=&quot;Theme.YanLuApp&quot; parent=&quot;Theme.MaterialComponents.DayNight.DarkActionBar&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-night/themes.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`Theme.YanLuApp`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`AppTheme.YanLuApp`&apos; ?"
+        errorLine1="    &lt;style name=&quot;Theme.YanLuApp&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`ImageTranslucentTheme`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`AppImageTranslucentTheme`&apos; ?"
+        errorLine1="    &lt;style name=&quot;ImageTranslucentTheme&quot; parent=&quot;Theme.AppCompat.DayNight.NoActionBar&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="19"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`roundedCornerImageStyle`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appRoundedCornerImageStyle`&apos; ?"
+        errorLine1="    &lt;style name=&quot;roundedCornerImageStyle&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="26"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`circleImageStyle`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appCircleImageStyle`&apos; ?"
+        errorLine1="    &lt;style name=&quot;circleImageStyle&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="31"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`user_like`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appUser_like`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/user_like.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`weixin`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appWeixin`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/weixin.png"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`yanlu`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appYanlu`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/yanlu.jpg"/>
+    </issue>
+
+    <issue
+        id="ResourceName"
+        message="Resource named &apos;`zhifubao`&apos; does not start with the project&apos;s resource prefix &apos;`app`&apos;; rename to &apos;`appZhifubao`&apos; ?">
+        <location
+            file="src/main/res/mipmap-xxhdpi/zhifubao.jpg"/>
+    </issue>
+
+</issues>

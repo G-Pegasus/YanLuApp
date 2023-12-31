@@ -38,7 +38,7 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
             mViewModel.getBannerImage()
         }
 
-        bannerViewPager = view!!.findViewById(R.id.banner)
+        bannerViewPager = requireView().findViewById(R.id.banner)
         bannerViewPager.adapter = BannerAdapter(requireContext())
         bannerViewPager.setLifecycleRegistry(lifecycle)
         bannerViewPager.setIndicatorStyle(IndicatorStyle.DASH)

@@ -80,6 +80,7 @@ class TodoDialog : DialogFragment() {
                     timeEt.text.toString()
                 )
             }
+            dismiss()
         }
         timeEt.setOnClickListener {
             openCalender(view.context, timeEt)
@@ -109,6 +110,7 @@ class TodoDialog : DialogFragment() {
         data = response
     }
 
+    @SuppressLint("SetTextI18n")
     private fun openCalender(context: Context, textView: TextView) {
         val calendar = Calendar.getInstance()
         val datePickerDialog = DatePickerDialog(

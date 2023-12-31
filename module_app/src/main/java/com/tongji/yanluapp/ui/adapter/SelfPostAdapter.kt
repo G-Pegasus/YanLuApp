@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -42,6 +43,7 @@ class SelfPostAdapter(private val context: Context,
         val tvPostLikeNum: TextView = itemView.findViewById(R.id.tv_like_num_self)
         val tvPostCommentNum: TextView = itemView.findViewById(R.id.tv_comment_num_self)
         val ivDeletePost: ImageView = itemView.findViewById(R.id.iv_delete_post_self)
+        val tvLikeUsers: TextView = itemView.findViewById(R.id.tv_like_user_self)
     }
 
     inner class SelfPostImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -54,6 +56,7 @@ class SelfPostAdapter(private val context: Context,
         val tvPostCommentNum: TextView = itemView.findViewById(R.id.tv_comment_num_1_self)
         val rvPostImage: RecyclerView = itemView.findViewById(R.id.rv_post_image_self)
         val ivDeletePost: ImageView = itemView.findViewById(R.id.iv_delete_post_1_self)
+        val tvLikeUsers: TextView = itemView.findViewById(R.id.tv_like_user_1_self)
     }
 
     override fun getItemViewType(position: Int): Int = if (postList[position].post_image.isEmpty()) {
@@ -88,6 +91,7 @@ class SelfPostAdapter(private val context: Context,
                 contentHolder.tvPostContent.text = postList[position].post_content.replace("\"", "")
                 contentHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
                 contentHolder.tvPostCommentNum.text = "18"
+                contentHolder.tvLikeUsers.text = postList[position].post_likes_list.joinToString(separator = "、")
 
                 if (postList[position].is_like) {
                     contentHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
@@ -97,6 +101,22 @@ class SelfPostAdapter(private val context: Context,
 
                 contentHolder.ivPostLike.setOnClickListener {
                     onItemClickListener.onItemClick(contentHolder.itemView, position)
+
+                    // 手动设置点赞与否，并进行差分刷新
+                    postList[position].is_like = !postList[position].is_like
+                    if (postList[position].is_like) {
+                        postList[position].post_likes++
+                    } else {
+                        postList[position].post_likes--
+                    }
+
+                    // 重新设置图标和点赞数量
+                    contentHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
+                    if (postList[position].is_like) {
+                        contentHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
+                    } else {
+                        contentHolder.ivPostLike.setImageResource(R.mipmap.post_like)
+                    }
                 }
 
                 contentHolder.ivDeletePost.setOnClickListener {
@@ -120,6 +140,7 @@ class SelfPostAdapter(private val context: Context,
                 imageHolder.tvPostContent.text = postList[position].post_content.replace("\"", "")
                 imageHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
                 imageHolder.tvPostCommentNum.text = "18"
+                imageHolder.tvLikeUsers.text = postList[position].post_likes_list.joinToString(separator = "、")
 
                 if (postList[position].is_like) {
                     imageHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
@@ -129,6 +150,22 @@ class SelfPostAdapter(private val context: Context,
 
                 imageHolder.ivPostLike.setOnClickListener {
                     onItemClickListener.onItemClick(imageHolder.itemView, position)
+
+                    // 手动设置点赞与否，并进行差分刷新
+                    postList[position].is_like = !postList[position].is_like
+                    if (postList[position].is_like) {
+                        postList[position].post_likes++
+                    } else {
+                        postList[position].post_likes--
+                    }
+
+                    // 重新设置图标和点赞数量
+                    imageHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
+                    if (postList[position].is_like) {
+                        imageHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
+                    } else {
+                        imageHolder.ivPostLike.setImageResource(R.mipmap.post_like)
+                    }
                 }
 
                 imageHolder.ivDeletePost.setOnClickListener {

@@ -27,7 +27,7 @@ data class PostData(
     var post_likes: Int,
     var post_release_time: String,
     var post_replys: String,
-    var post_likes_list: List<String>,
+    var post_likes_list: ArrayList<String>,
     var user_name: String,
     var user_head: String,
     var is_like: Boolean,

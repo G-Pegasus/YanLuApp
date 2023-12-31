@@ -35,7 +35,6 @@ class SelfPostActivity : BaseActivity1<SelfPostViewModel, ActivitySelfPostBindin
                 selfPostAdapter.setOnItemClickListener(object : SelfPostAdapter.OnItemClickListener {
                     override fun onItemClick(view: View, position: Int) {
                         mViewModel.postLike(it[position].post_id)
-                        mViewBind.selfRefresh.autoRefresh(100)
                     }
 
                     override fun onItemLongClick(view: View, position: Int) {}

@@ -14,6 +14,7 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.luck.picture.lib.utils.ToastUtils
 import com.tongji.yanluapp.R
 import com.tongji.lib_common.bean.PostData
+import com.tongji.lib_common.utils.CacheUtil
 import me.hgj.jetpackmvvm.base.appContext
 
 /**
@@ -39,6 +40,7 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
         val tvPostContent: TextView = itemView.findViewById(R.id.tv_post_content)
         val tvPostLikeNum: TextView = itemView.findViewById(R.id.tv_like_num)
         val tvPostCommentNum: TextView = itemView.findViewById(R.id.tv_comment_num)
+        val tvLikeUsers: TextView = itemView.findViewById(R.id.tv_like_user)
     }
 
     inner class PostImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -50,6 +52,7 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
         val tvPostLikeNum: TextView = itemView.findViewById(R.id.tv_like_num_1)
         val tvPostCommentNum: TextView = itemView.findViewById(R.id.tv_comment_num_1)
         val rvPostImage: RecyclerView = itemView.findViewById(R.id.rv_post_image)
+        val tvLikeUsers: TextView = itemView.findViewById(R.id.tv_like_user_1)
     }
 
     override fun getItemViewType(position: Int): Int = if (postList[position].post_image.isEmpty()) {
@@ -85,6 +88,7 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 contentHolder.tvPostContent.text = postList[position].post_content.replace("\"", "")
                 contentHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
                 contentHolder.tvPostCommentNum.text = "18"
+                contentHolder.tvLikeUsers.text = postList[position].post_likes_list.joinToString(separator = "、")
 
                 if (postList[position].is_like) {
                     contentHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
@@ -93,7 +97,6 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 }
 
                 contentHolder.ivPostLike.setOnClickListener {
-                    val oldList = postList
                     onItemClickListener.onItemClick(contentHolder.itemView, position)
 
                     // 手动设置点赞与否，并进行差分刷新
@@ -103,9 +106,6 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                     } else {
                         postList[position].post_likes--
                     }
-
-                    val diffResult = DiffUtil.calculateDiff(MyDiffCallback(oldList, postList))
-                    diffResult.dispatchUpdatesTo(this)
 
                     // 重新设置图标和点赞数量
                     contentHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
@@ -125,6 +125,7 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 imageHolder.tvPostContent.text = postList[position].post_content.replace("\"", "")
                 imageHolder.tvPostLikeNum.text = postList[position].post_likes.toString()
                 imageHolder.tvPostCommentNum.text = "18"
+                imageHolder.tvLikeUsers.text = postList[position].post_likes_list.joinToString(separator = "、")
 
                 if (postList[position].is_like) {
                     imageHolder.ivPostLike.setImageResource(R.mipmap.post_liked)
@@ -133,7 +134,6 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                 }
 
                 imageHolder.ivPostLike.setOnClickListener {
-                    val oldList = postList
                     onItemClickListener.onItemClick(imageHolder.itemView, position)
 
                     // 手动设置点赞与否，并进行差分刷新
@@ -143,9 +143,6 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
                     } else {
                         postList[position].post_likes--
                     }
-
-                    val diffResult = DiffUtil.calculateDiff(MyDiffCallback(oldList, postList))
-                    diffResult.dispatchUpdatesTo(this)
 
                     // 重新设置图标和点赞数量
                     imageHolder.tvPostLikeNum.text = postList[position].post_likes.toString()

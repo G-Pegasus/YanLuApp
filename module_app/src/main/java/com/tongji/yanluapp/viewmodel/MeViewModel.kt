@@ -1,6 +1,7 @@
 package com.tongji.yanluapp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import com.luck.picture.lib.entity.LocalMedia
 import com.tongji.lib_common.network.apiService1
 import com.tongji.lib_common.bean.AvatarResponse
 import com.tongji.lib_common.bean.UpdateInfoResponse
@@ -24,10 +25,11 @@ class MeViewModel : BaseViewModel() {
     var userInfo = MutableLiveData<UpdateInfoResponse>()
 
     // 上传单张图片
-    fun uploadAvatar(file: File) {
+    fun uploadAvatar(file: LocalMedia) {
+        val imageFile = File(file.realPath)
         val builder = MultipartBody.Builder().setType(MultipartBody.FORM) // 表单类型
-        val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), file)
-        builder.addFormDataPart("file", file.name, requestFile)
+        val requestFile: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), imageFile)
+        builder.addFormDataPart("file", imageFile.name, requestFile)
         val part = builder.build().part(0)
 
         request(

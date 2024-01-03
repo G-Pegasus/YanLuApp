@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.luck.picture.lib.utils.ToastUtils
 import com.tongji.yanluapp.R
-import me.hgj.jetpackmvvm.ext.download.OnDownLoadListener
 
 /**
  * @author: Kana (Tongji)

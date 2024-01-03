@@ -58,6 +58,7 @@ class RecFragment : BaseFragment1<RecViewModel, FragmentRecBinding>() {
         if (CacheUtil.isLogin()) {
             mViewModel.getArticles()
         }
+
         mViewModel.articleResult.observe(viewLifecycleOwner) { resultState ->
             parseState(resultState, {
                 it.shuffle()

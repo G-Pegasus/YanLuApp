@@ -19,7 +19,7 @@ class ReleaseViewModel : BaseViewModel() {
 
     var list = ArrayList<MultipartBody.Part>()
 
-    // 上传单张图片
+    // 上传多张图片
     fun uploadImages(content: String, files: List<LocalMedia>) {
         var requestFile: RequestBody
 

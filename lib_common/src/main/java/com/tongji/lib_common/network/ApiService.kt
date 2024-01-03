@@ -91,7 +91,7 @@ interface ApiService {
 
     //获取当日的TODO
     @GET("todo/getTodo")
-    suspend fun getTodoByTime(@Query("time")time: String): ApiResponse2<List<TodoResponse>>
+    suspend fun getTodoByTime(@Query("time")time: String): ApiResponse1<List<TodoResponse>>
 
     //添加TODO
     @FormUrlEncoded
@@ -100,7 +100,7 @@ interface ApiService {
         @Field("title") title: String,
         @Field("time") time: String,
         @Field("detail") detail: String
-    ): ApiResponse2<TodoResponse>
+    ): ApiResponse1<TodoResponse>
 
     //更新TODO
     @FormUrlEncoded
@@ -110,10 +110,10 @@ interface ApiService {
         @Field("title") title: String,
         @Field("detail") detail: String,
         @Field("time") time: String
-    ): ApiResponse2<TodoResponse>
+    ): ApiResponse1<TodoResponse>
 
     //删除TODO
     @DELETE("todo/delete")
-    suspend fun deleteTodo(@Query("todo_id") id: String): ApiResponse2<TodoResponse>
+    suspend fun deleteTodo(@Query("todo_id") id: String): ApiResponse1<TodoResponse>
 
 }

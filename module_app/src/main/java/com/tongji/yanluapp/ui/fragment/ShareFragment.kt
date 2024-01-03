@@ -9,8 +9,10 @@ import com.tongji.yanluapp.R
 import com.tongji.yanluapp.databinding.FragmentShareBinding
 import com.tongji.yanluapp.viewmodel.ShareViewModel
 import com.tongji.lib_base.ui.BaseFragment1
+import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.ui.activity.ReleaseActivity
 import com.tongji.yanluapp.ui.adapter.PostAdapter
+import com.tongji.yanluapp.utils.showToast
 import kotlinx.coroutines.delay
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
@@ -34,7 +36,10 @@ class ShareFragment : BaseFragment1<ShareViewModel, FragmentShareBinding>() {
         val rvPost = mViewBind.rvShare
         rvPost.layoutManager = LinearLayoutManager(appContext)
 
-        mViewModel.getPost()
+        if (CacheUtil.isLogin()) {
+            mViewModel.getPost()
+        }
+
         rvPost.itemAnimator?.changeDuration = 0
         mViewModel.postResult.observe(viewLifecycleOwner) { resultState ->
             parseState(resultState, {

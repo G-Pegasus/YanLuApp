@@ -19,8 +19,7 @@ class ShareViewModel : BaseViewModel() {
 
     fun getPost() {
         request(
-            { apiService1.getPost() } // 请求体
-            , postResult
+            { apiService1.getPost() }, postResult
         )
     }
 

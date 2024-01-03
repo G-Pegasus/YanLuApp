@@ -1,5 +1,6 @@
 package com.tongji.yanluapp.ui.activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -26,6 +27,7 @@ class ReleaseActivity : BaseActivity1<ReleaseViewModel, ActivityReleaseBinding>(
     private var mediaList = mutableListOf<LocalMedia>()
     private lateinit var imageAdapter: ImageAdapter
 
+    @SuppressLint("ResourceAsColor")
     override fun initView(savedInstanceState: Bundle?) {
         mViewBind.toolbar.initClose("发布动态") {
             it.setBackgroundColor(R.color.colorPrimary)
@@ -39,7 +41,6 @@ class ReleaseActivity : BaseActivity1<ReleaseViewModel, ActivityReleaseBinding>(
         imageAdapter.setOnItemClickListener(object : ImageAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
                 if (mediaList.size > 0) {
-                    val media = mediaList[position]
                     PictureSelector.create(this@ReleaseActivity).openPreview()
                 }
             }

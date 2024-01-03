@@ -14,6 +14,7 @@ import com.haibin.calendarview.CalendarLayout
 import com.haibin.calendarview.CalendarView
 import com.haibin.calendarview.CalendarView.OnCalendarSelectListener
 import com.tongji.lib_base.ui.BaseFragment1
+import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.R
 import com.tongji.yanluapp.databinding.FragmentSubjectBinding
 import com.tongji.yanluapp.ui.adapter.TodoAdapter
@@ -100,7 +101,10 @@ class SubjectFragment : BaseFragment1<SubjectViewModel, FragmentSubjectBinding>(
                     mTextYear.text = calendar.year.toString()
                     mTextLunar.text = calendar.lunar
                     mYear = calendar.year
-                    mViewModel.getTodoByTime("$mYear.${calendar.month}.${calendar.day}")
+
+                    if (CacheUtil.isLogin()) {
+                        mViewModel.getTodoByTime("$mYear.${calendar.month}.${calendar.day}")
+                    }
                 }
             })
         }
@@ -127,7 +131,10 @@ class SubjectFragment : BaseFragment1<SubjectViewModel, FragmentSubjectBinding>(
                 Toast.makeText(requireContext(), "操作失败", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(requireContext(), "操作成功", Toast.LENGTH_SHORT).show()
-                mViewModel.getTodoByTime(mTime)
+
+                if (CacheUtil.isLogin()) {
+                    mViewModel.getTodoByTime(mTime)
+                }
             }
         }
         todoAdapter.setOnClickedListener {
@@ -156,8 +163,10 @@ class SubjectFragment : BaseFragment1<SubjectViewModel, FragmentSubjectBinding>(
         dialog.setAddTodoListener { title, detail, time ->
             mViewModel.addTodo(title, time, detail)
         }
-        mViewModel.getTodoByTime("$mYear.${mCalendarView.curMonth}.${mCalendarView.curDay}")
 
+        if (CacheUtil.isLogin()) {
+            mViewModel.getTodoByTime("$mYear.${mCalendarView.curMonth}.${mCalendarView.curDay}")
+        }
     }
 
     override fun dismissLoading() {

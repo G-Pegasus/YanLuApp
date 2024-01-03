@@ -33,4 +33,4 @@ data class ApiResponse1<T>(val code: Int, val msg: String, val data: T) : BaseRe
 
 }
 
-data class ApiResponse2<T>(val code:Int,val msg: String,val data: T)
+data class ApiResponse2<T>(val code: Int, val msg: String, val data: T)

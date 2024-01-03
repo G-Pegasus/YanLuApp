@@ -26,7 +26,6 @@ import com.tongji.lib_common.network.NetworkApi
 import com.tongji.yanluapp.ui.activity.SelfPostActivity
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
-import java.io.File
 
 
 /**
@@ -109,11 +108,11 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
 
                     override fun onResult(result: ArrayList<LocalMedia>) {
 
-                        mViewModel.uploadAvatar(File(result[0].realPath))
+                        mViewModel.uploadAvatar(result[0])
 
                         mViewModel.avatarResult.observe(this@MeFragment) { resultState ->
                             parseState(resultState, {
-                                Glide.with(requireContext()).load(result[0].realPath).into(mViewBind.ivUserPortrait)
+                                Glide.with(requireContext()).load(it.headUrl).into(mViewBind.ivUserPortrait)
                                 mmkv.encode("avatar", it.headUrl)
                             }, {
                                 requireContext().showToast(it.errorMsg)
@@ -132,7 +131,7 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
                 startActivity<LoginActivity>()
             } else {
                 // EditLogin().show(childFragmentManager, "EditLogin")
-                // CacheUtil.setIsLogin(false)
+                CacheUtil.setIsLogin(false)
                 NetworkApi.INSTANCE.cookieJar.clear()
                 CacheUtil.setUser(null)
                 mViewBind.refreshLayout.autoRefresh()

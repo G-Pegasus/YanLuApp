@@ -1,5 +1,6 @@
 package com.tongji.yanluapp.ui.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,7 @@ class SearchResultActivity : BaseActivity1<SearchResultViewModel, ActivitySearch
 
     private lateinit var schoolAdapter: SchoolAdapter
 
+    @SuppressLint("ResourceAsColor")
     override fun initView(savedInstanceState: Bundle?) {
         val searchKey = intent.getStringExtra("searchKey")
 

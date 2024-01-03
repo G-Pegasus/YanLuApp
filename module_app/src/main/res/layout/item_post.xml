@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/root_like"
             android:layout_marginStart="5dp"
-            android:text="下面这些研友给你点赞了哦^_^："
+            android:text="下面这些研友点赞了哦^_^："
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -127,6 +127,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="挽弦慕笙、盈盈秋水"
             android:textColor="@color/black"
             android:textSize="12sp" />

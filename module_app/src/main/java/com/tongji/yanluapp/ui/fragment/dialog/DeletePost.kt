@@ -53,7 +53,7 @@ class DeletePost : DialogFragment() {
 
         tvSure.setOnClickListener {
             mOnItemClickListener.onItemClick()
-            val postId = arguments!!.getString("postId")
+            val postId = requireArguments().getString("postId")
             viewModel.deletePost(postId!!)
             dismissAllowingStateLoss()
         }

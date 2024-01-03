@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_school"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,7 +13,8 @@
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    tools:ignore="ResourceName">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -132,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/root_like_1_self"
             android:layout_marginStart="5dp"
-            android:text="下面这些研友给你点赞了哦^_^："
+            android:text="下面这些研友点赞了哦^_^："
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -144,6 +146,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="挽弦慕笙、盈盈秋水"
             android:textColor="@color/black"
             android:textSize="12sp" />

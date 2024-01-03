@@ -3,6 +3,7 @@ package com.tongji.yanluapp.ui.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ResolveInfo
+import android.graphics.Bitmap
 import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
@@ -15,6 +16,7 @@ import java.net.URISyntaxException
 
 
 class SchoolInfoActivity : AppCompatActivity() {
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_school_info)

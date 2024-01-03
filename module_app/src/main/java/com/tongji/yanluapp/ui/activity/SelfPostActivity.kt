@@ -1,5 +1,6 @@
 package com.tongji.yanluapp.ui.activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ class SelfPostActivity : BaseActivity1<SelfPostViewModel, ActivitySelfPostBindin
 
     private lateinit var selfPostAdapter: SelfPostAdapter
 
+    @SuppressLint("ResourceAsColor")
     override fun initView(savedInstanceState: Bundle?) {
         val rvSelfPost = mViewBind.rvSelfPost
         rvSelfPost.layoutManager = LinearLayoutManager(appContext)

@@ -18,7 +18,7 @@ class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
         mViewBind.navView.init {
             when (it) {
                 R.id.navigation_home -> mViewBind.mainViewpager.setCurrentItem(0, false)
-                 R.id.navigation_subject -> mViewBind.mainViewpager.setCurrentItem(3, false)
+                R.id.navigation_subject -> mViewBind.mainViewpager.setCurrentItem(3, false)
                 R.id.navigation_info -> mViewBind.mainViewpager.setCurrentItem(1, false)
                 R.id.navigation_mine -> mViewBind.mainViewpager.setCurrentItem(2, false)
             }

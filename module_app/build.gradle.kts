@@ -26,4 +26,7 @@ dependencies {
     implementation("com.haibin:calendarview:3.7.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
+    // 图片展示框架
+    implementation("com.github.SherlockGougou:BigImageViewPager:androidx-7.3.0")
+
 }

@@ -10,6 +10,8 @@ import com.tongji.yanluapp.databinding.ActivitySplashBinding
 import com.tongji.yanluapp.viewmodel.SplashViewModel
 import kotlinx.coroutines.delay
 import com.tongji.lib_base.ui.BaseActivity1
+import com.umeng.commonsdk.UMConfigure
+import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
 
@@ -22,7 +24,7 @@ import me.hgj.jetpackmvvm.util.startActivity
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : BaseActivity1<SplashViewModel, ActivitySplashBinding>() {
 
-    //请求数据ViewModel
+    // 请求数据ViewModel
     private val imageViewModel: SplashViewModel by viewModels()
 
     override fun initView(savedInstanceState: Bundle?) {

@@ -32,5 +32,3 @@ data class ApiResponse1<T>(val code: Int, val msg: String, val data: T) : BaseRe
     override fun isSucces(): Boolean = code == 200
 
 }
-
-data class ApiResponse2<T>(val code: Int, val msg: String, val data: T)

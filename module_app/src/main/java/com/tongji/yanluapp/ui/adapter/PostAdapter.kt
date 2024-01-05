@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
-import com.luck.picture.lib.utils.ToastUtils
 import com.tongji.yanluapp.R
 import com.tongji.lib_common.bean.PostData
-import com.tongji.lib_common.utils.CacheUtil
 import me.hgj.jetpackmvvm.base.appContext
 
 /**
@@ -163,7 +160,7 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
         }
     }
 
-    // 列表数据的差分刷新
+    /**  列表数据的差分刷新
     class MyDiffCallback(private val oldList: ArrayList<PostData>, private val newList: ArrayList<PostData>)
         : DiffUtil.Callback() {
         override fun getOldListSize(): Int = oldList.size
@@ -177,8 +174,8 @@ class PostAdapter(private val context: Context, private val postList: ArrayList<
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             return oldList[oldItemPosition].is_like == newList[newItemPosition].is_like
         }
-
     }
+    */
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
         this.onItemClickListener = listener

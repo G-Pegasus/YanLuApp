@@ -115,5 +115,4 @@ interface ApiService {
     //删除TODO
     @DELETE("todo/delete")
     suspend fun deleteTodo(@Query("todo_id") id: String): ApiResponse1<TodoResponse>
-
 }

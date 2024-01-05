@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@mipmap/bizhi"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.LoginActivity"
+    tools:ignore="ResourceName">
 
     <EditText
         android:id="@+id/et_username"

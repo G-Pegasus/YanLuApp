@@ -22,6 +22,8 @@ buildscript {
         maven { url = uri("https://maven.aliyun.com/repository/google") }
         mavenCentral()
         google()
+        jcenter()
+        maven { url = uri("https://repo1.maven.org/maven2/") }
     }
     dependencies {
         /*
@@ -31,8 +33,8 @@ buildscript {
         * */
         classpath(libs.android.gradlePlugin)
         classpath(libs.kotlin.gradlePlugin)
-
         classpath("com.github.whataa:pandora-plugin:1.0.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
+        classpath("com.android.tools.build:gradle:3.4.0")
     }
 }

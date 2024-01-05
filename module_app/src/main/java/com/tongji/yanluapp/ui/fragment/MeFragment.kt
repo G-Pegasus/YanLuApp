@@ -27,7 +27,6 @@ import com.tongji.yanluapp.ui.activity.SelfPostActivity
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
 
-
 /**
  * @author: Kana (Tongji)
  * @date: 2022/9/14 16:18
@@ -155,16 +154,6 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
             mViewBind.tvUserName.text = it.userName
             mViewBind.tvUserDes.text = it.userSign
         }
-
-//        mViewBind.tvRefresh.setOnClickListener {
-//            if (CacheUtil.getUserInfo()?.userName == null && CacheUtil.getUserInfo()?.userSign == null) {
-//                requireContext().showToast("未获取到更改信息")
-//            } else {
-//                mViewModel.updateInfo(CacheUtil.getUserInfo()!!.userName, CacheUtil.getUserInfo()!!.userSign)
-//                mViewBind.tvUserName.text = CacheUtil.getUserInfo()?.userName
-//                mViewBind.tvUserDes.text = CacheUtil.getUserInfo()?.userSign
-//            }
-//        }
 
         mViewBind.rootMoney.setOnClickListener {
             RewardAuthor().show(childFragmentManager, "RewardAuthor")

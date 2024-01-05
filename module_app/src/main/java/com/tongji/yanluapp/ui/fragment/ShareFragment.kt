@@ -1,8 +1,8 @@
 package com.tongji.yanluapp.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
@@ -12,8 +12,6 @@ import com.tongji.lib_base.ui.BaseFragment1
 import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.ui.activity.ReleaseActivity
 import com.tongji.yanluapp.ui.adapter.PostAdapter
-import com.tongji.yanluapp.utils.showToast
-import kotlinx.coroutines.delay
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
@@ -28,6 +26,7 @@ class ShareFragment : BaseFragment1<ShareViewModel, FragmentShareBinding>() {
 
     private lateinit var postAdapter: PostAdapter
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun initView(savedInstanceState: Bundle?) {
         mViewBind.shareFloatBtn.setOnClickListener {
             startActivity<ReleaseActivity>()

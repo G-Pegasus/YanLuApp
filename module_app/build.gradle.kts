@@ -32,6 +32,7 @@ dependencies {
     // 友盟（移动统计、分享）
     implementation("com.umeng.umsdk:common:9.4.7")  // 必选
     implementation("com.umeng.umsdk:asms:1.4.0")  // 必选
+
     // 分享相关库
     //implementation("com.umeng.umsdk:share-core:7.1.6") // 分享核心库，必选
     //implementation("com.umeng.umsdk:share-board:7.1.6") // 分享面板功能，可选

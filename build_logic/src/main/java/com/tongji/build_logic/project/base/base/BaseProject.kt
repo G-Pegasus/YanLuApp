@@ -2,7 +2,6 @@ package com.tongji.build_logic.project.base.base
 
 import org.gradle.api.*
 
-@Suppress("UsePropertyAccessSyntax")
 abstract class BaseProject(project: Project) : Project by project {
   
   fun apply() {

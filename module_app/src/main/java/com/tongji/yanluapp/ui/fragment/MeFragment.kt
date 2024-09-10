@@ -130,7 +130,7 @@ class MeFragment : BaseFragment1<MeViewModel, FragmentMeBinding>() {
                 startActivity<LoginActivity>()
             } else {
                 // EditLogin().show(childFragmentManager, "EditLogin")
-                CacheUtil.setIsLogin(false)
+                // CacheUtil.setIsLogin(false)
                 NetworkApi.INSTANCE.cookieJar.clear()
                 CacheUtil.setUser(null)
                 mViewBind.refreshLayout.autoRefresh()

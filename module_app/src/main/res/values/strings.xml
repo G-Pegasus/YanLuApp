@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">研路相随</string>
+    <string name="app_name">掌上考研</string>
     <string name="home">首页</string>
     <string name="info">院校信息</string>
     <string name="subject">日历</string>
     <string name="mine">我的</string>
     <string name="todo">TODO</string>
+    <string name="app">请输入账号：</string>
 </resources>

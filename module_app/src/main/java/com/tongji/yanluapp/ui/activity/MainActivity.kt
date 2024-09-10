@@ -34,16 +34,15 @@ class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
                 this@MainActivity.showToast("再按一次退出应用")
-                mExitTime = System.currentTimeMillis();
+                mExitTime = System.currentTimeMillis()
             } else {
                 //后台运行 不结束程序 只是退出到后台
                 val intent = Intent()
-                intent.setAction("android.intent.action.MAIN");
-                intent.addCategory("android.intent.category.HOME");
-                startActivity(intent);
-                //System.exit(0);   //常规java、c#的标准退出法，返回值为0代表正常退出 结束程序
+                intent.setAction("android.intent.action.MAIN")
+                intent.addCategory("android.intent.category.HOME")
+                startActivity(intent)
             }
-            return true;
+            return true
         }
 
         return super.onKeyDown(keyCode, event)

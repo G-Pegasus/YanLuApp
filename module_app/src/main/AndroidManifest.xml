@@ -32,7 +32,7 @@
 
     <application
         android:name=".app.App"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/yanlu"
@@ -67,6 +67,7 @@
         <activity
             android:name=".ui.activity.SearchResultActivity"
             android:exported="false"
+            android:permission="@string/ps_completed"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".ui.activity.SchoolInfoActivity"

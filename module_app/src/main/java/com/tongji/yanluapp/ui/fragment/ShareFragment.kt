@@ -3,6 +3,7 @@ package com.tongji.yanluapp.ui.fragment
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.tongji.yanluapp.R
@@ -12,6 +13,7 @@ import com.tongji.lib_base.ui.BaseFragment1
 import com.tongji.lib_common.utils.CacheUtil
 import com.tongji.yanluapp.ui.activity.ReleaseActivity
 import com.tongji.yanluapp.ui.adapter.PostAdapter
+import com.tongji.yanluapp.utils.showToast
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.startActivity
@@ -37,6 +39,8 @@ class ShareFragment : BaseFragment1<ShareViewModel, FragmentShareBinding>() {
 
         if (CacheUtil.isLogin()) {
             mViewModel.getPost()
+        } else {
+            Toast.makeText(context, "登录以获取数据", Toast.LENGTH_SHORT).show()
         }
 
         rvPost.itemAnimator?.changeDuration = 0

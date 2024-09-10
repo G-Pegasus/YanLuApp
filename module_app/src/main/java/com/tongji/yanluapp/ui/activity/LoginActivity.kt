@@ -9,6 +9,7 @@ import com.tongji.yanluapp.databinding.ActivityLoginBinding
 import com.tongji.yanluapp.viewmodel.LoginViewModel
 import me.hgj.jetpackmvvm.base.appContext
 import com.tongji.lib_base.ui.BaseActivity1
+import com.tongji.yanluapp.R
 import me.hgj.jetpackmvvm.ext.parseState
 
 class LoginActivity : BaseActivity1<LoginViewModel, ActivityLoginBinding>() {
@@ -18,7 +19,7 @@ class LoginActivity : BaseActivity1<LoginViewModel, ActivityLoginBinding>() {
         mViewBind.btnLogin.setOnClickListener {
             when {
                 mViewBind.etUsername.text.toString().isEmpty() ->
-                    Toast.makeText(appContext, "请填写账号", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(appContext, resources.getString(R.string.app), Toast.LENGTH_SHORT).show()
                 mViewBind.etPwd.text.toString().isEmpty() ->
                     Toast.makeText(appContext, "请填写密码", Toast.LENGTH_SHORT).show()
                 else -> mViewModel.loginReq(

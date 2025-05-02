@@ -3,11 +3,11 @@ package com.tongji.yanluapp.ui.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ResolveInfo
-import android.graphics.Bitmap
 import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
+import android.os.Looper
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.tongji.yanluapp.R
@@ -16,11 +16,20 @@ import java.net.URISyntaxException
 
 
 class SchoolInfoActivity : AppCompatActivity() {
-    @SuppressLint("SetJavaScriptEnabled")
+    private  lateinit var webView: WebView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_school_info)
+        // IdleHandler 优化 WebView 加载
+        Looper.myQueue().addIdleHandler {
+            initializeWebView()
+            false
+        }
+    }
 
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initializeWebView() {
         val webView = findViewById<WebView>(R.id.webView)
 
         val bundle = intent.extras

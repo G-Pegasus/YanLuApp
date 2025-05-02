@@ -2,6 +2,9 @@ package com.tongji.yanluapp.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.view.KeyEvent
 import com.tongji.lib_base.ui.BaseActivity1
 import com.tongji.yanluapp.R
@@ -10,6 +13,8 @@ import com.tongji.yanluapp.utils.init
 import com.tongji.yanluapp.utils.initMain
 import com.tongji.yanluapp.utils.showToast
 import com.tongji.yanluapp.viewmodel.MainViewModel
+import java.lang.ref.WeakReference
+import kotlin.concurrent.thread
 
 class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
 
@@ -29,7 +34,6 @@ class MainActivity : BaseActivity1<MainViewModel, ActivityMainBinding>() {
             }
         }
     }
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {

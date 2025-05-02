@@ -2,6 +2,7 @@ package com.tongji.lib_common.network
 
 import com.tongji.lib_common.bean.*
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.*
 
 /**
@@ -16,7 +17,13 @@ interface ApiService {
     companion object {
         const val BASE_URL = "http://cn.bing.com/"
         const val BASE_URL1 = "http://47.108.173.86:7001/"
+        const val BASE_URL2 = "http://81.70.43.139:8000/"
     }
+
+    @POST("/auth/verification/code/send")
+    suspend fun sendSysCode(
+        @Body requestBody: RequestBody
+    ): ApiResponse2<Any>
 
     @GET("HPImageArchive.aspx?format=js&idx=0&n=1")
     suspend fun getSplashImage(): ApiResponse<ArrayList<ImageResponse>>

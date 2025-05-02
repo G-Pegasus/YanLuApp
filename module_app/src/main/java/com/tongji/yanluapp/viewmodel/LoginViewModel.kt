@@ -3,9 +3,11 @@ package com.tongji.yanluapp.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.tongji.lib_common.network.apiService1
 import com.tongji.lib_common.bean.UserInfoResponse
+import com.tongji.lib_common.network.apiService2
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.request
 import me.hgj.jetpackmvvm.state.ResultState
+import okhttp3.RequestBody
 
 /**
  * @author: Kana (Tongji)
@@ -16,6 +18,13 @@ import me.hgj.jetpackmvvm.state.ResultState
 class LoginViewModel : BaseViewModel() {
 
     var loginResult = MutableLiveData<ResultState<UserInfoResponse>>()
+
+    fun sendSysCode(requestBody: RequestBody) {
+        request(
+            { apiService2.sendSysCode(requestBody) },
+            {}, {}, false, "正在登录中"
+        )
+    }
 
     fun loginReq(username: String, password: String) {
         request(

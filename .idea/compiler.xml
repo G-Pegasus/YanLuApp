@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="build_logic" target="11" />
+      <module name="build_logic.main" target="11" />
+      <module name="build_logic.test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

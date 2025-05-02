@@ -15,7 +15,6 @@ import me.hgj.jetpackmvvm.state.ResultState
  * @email: tongji0x208@gmail.com
  */
 class RecViewModel : BaseViewModel() {
-
     val bannerResult = MutableLiveData<ResultState<BannerImageResponse>>()
     val articleResult = MutableLiveData<ResultState<ArrayList<ArticleResponse>>>()
 

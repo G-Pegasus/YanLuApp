@@ -1,5 +1,5 @@
 [versions]
-android_gradle_version = "7.2.1"
+android_gradle_version = "7.4.2"
 kotlin_gradle_version = "1.7.0"
 hilt_gradle_version = "2.43"
 
